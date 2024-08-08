@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    width: 900px; 
+    height: 650px;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 18px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative; /* Pour permettre le positionnement absolu des options */
+}
+
+.chat-box {
+    padding: 20px;
+    height: 400px; /* Hauteur ajustée pour la zone de chat */
+    overflow-y: auto;
+    border-bottom: 2px solid #ddd;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 60px; /* Marge en haut pour faire de la place pour les options fixes */
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    max-width: 75%;
+    position: relative;
+    line-height: 1.5;
+}
+
+.bot-message {
+    background: #e0f7fa;
+    color: #00796b;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: #00796b;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.options-container {
+    position: sticky; /* Fixe le conteneur des options en haut */
+    top: 0; /* Positionne le conteneur en haut */
+    background: #f1f1f1;
+    z-index: 10; /* Assure que les options restent au-dessus des autres éléments */
+    border-bottom: 2px solid #ddd;
+    padding: 10px 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background: #00796b;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.option-button i {
+    margin-right: 10px;
+}
+
+.option-button:hover {
+    background: #004d40;
+}
+
+.input-container {
+    display: flex;
+    padding: 10px;
+    background: #fff;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.send-button {
+    background: #00796b;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.send-button i {
+    margin-right: 8px;
+}
+
+.send-button:hover {
+    background: #004d40;
+}
+
+.send-button:focus {
+    outline: none;
+}
+
+
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.card-address,
+.card-price {
+    margin: 5px 0;
+    color: #555;
+}
+
+.card-details-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.card-details-button:hover {
+    background: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

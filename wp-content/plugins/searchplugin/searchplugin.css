@@ -1,0 +1,365 @@
+/* General styles for the admin page */
+.searchplugin-admin {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Form table styling */
+.searchplugin-form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.searchplugin-form-table th,
+.searchplugin-form-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.searchplugin-form-table th {
+    text-align: left;
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.searchplugin-form-table td {
+    font-size: 14px;
+}
+
+.searchplugin-form-table input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Improve the appearance of category checkboxes */
+.searchplugin-form-table input[type="checkbox"] {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+.searchplugin-form-table input[type="checkbox"]:checked {
+    background-color: #0073aa;
+    border-color: #0073aa;
+}
+
+.searchplugin-form-table input[type="checkbox"]:checked::before {
+    content: "✔";
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 2px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+/* Submit button styling */
+.searchplugin-admin .submit {
+    margin-top: 20px;
+}
+
+.searchplugin-admin .button {
+    padding: 12px 24px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.searchplugin-admin .button-primary {
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+}
+
+.searchplugin-admin .button-secondary {
+    background-color: #f7f7f7;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.searchplugin-admin .button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* Additional styles */
+.searchplugin-admin h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.searchplugin-admin label {
+    font-weight: bold;
+}
+
+.searchplugin-form-table label {
+    display: flex;
+    align-items: center;
+}
+
+.searchplugin-form-table input[type="checkbox"] + label {
+    cursor: pointer;
+}
+
+/* Manage Categories Page */
+.searchplugin-manage-categories {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Form styling for adding a new category */
+.searchplugin-manage-categories form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.searchplugin-manage-categories form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.searchplugin-manage-categories form th,
+.searchplugin-manage-categories form td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.searchplugin-manage-categories form th {
+    text-align: left;
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.searchplugin-manage-categories form td {
+    font-size: 14px;
+}
+
+.searchplugin-manage-categories form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Button styling for form */
+.searchplugin-manage-categories .submit {
+    margin-top: 20px;
+}
+
+.searchplugin-manage-categories .button {
+    padding: 12px 24px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.searchplugin-manage-categories .button-primary {
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+}
+
+.searchplugin-manage-categories .button-primary:hover {
+    background-color: #005a87;
+}
+
+.searchplugin-manage-categories .button-secondary {
+    background-color: #f7f7f7;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.searchplugin-manage-categories .button-secondary:hover {
+    background-color: #e2e2e2;
+}
+
+/* Category list styling */
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    font-size: 16px;
+    font-family: 'Verdana', sans-serif;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.category-list li:last-child {
+    border-bottom: none;
+}
+
+/* Notification styles */
+.notice.notice-success {
+    padding: 10px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Shortcode styles */
+.searchplugin-shortcode {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.searchplugin-shortcode .search-form {
+    margin-bottom: 20px;
+}
+
+.searchplugin-shortcode .search-form .form-group {
+    margin-bottom: 15px;
+}
+
+.searchplugin-shortcode .search-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.searchplugin-shortcode .search-form .form-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.searchplugin-shortcode .search-form .categories {
+    margin-bottom: 20px;
+}
+
+.searchplugin-shortcode .search-form .categories label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.searchplugin-shortcode .search-form .categories input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.searchplugin-shortcode .search-form button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #0073aa;
+    color: #fff;
+    cursor: pointer;
+}
+
+.searchplugin-shortcode .search-form button[type="submit"]:hover {
+    background-color: #005a87;
+}
+
+.searchplugin-shortcode .results {
+    margin-top: 20px;
+}
+
+.searchplugin-shortcode .results .result-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.searchplugin-shortcode .results .result-item h2 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+
+.searchplugin-shortcode .results .result-item p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.ui-autocomplete {
+    z-index: 1000;
+}
+
+.ui-menu-item {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.ui-menu-item:hover {
+    background-color: #ddd;
+}
+
+/* Conteneur d'autocomplétion */
+.autocomplete-suggestions {
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+/* Élément de suggestion */
+.autocomplete-suggestion {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Élément de suggestion au survol */
+.autocomplete-suggestion:hover,
+.autocomplete-suggestion.active {
+    background: #f0f0f0;
+    border-left: 4px solid #0073aa;
+}
+
+/* Texte des suggestions */
+.autocomplete-suggestion .suggestion-text {
+    font-weight: 400;
+    color: #333;
+}
