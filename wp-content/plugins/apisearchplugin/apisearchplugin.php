@@ -32,9 +32,11 @@ add_action('admin_menu', 'apisearchplugin_add_admin_page');
 function apisearchplugin_shortcode() {
 
     ob_start();
-    apisearchplugin_render_search_page();
+        echo '<div id="apisearchplugin">';
+            $search_query = apisearchplugin_render_search_bar_page();
+            apisearchplugin_display_residences_page($search_query);
+        echo '</div>';
     return ob_get_clean();
-
 }
 
 add_shortcode('apisearchplugin', 'apisearchplugin_shortcode');
@@ -83,89 +85,29 @@ function call_api_and_get_residences() {
     return $data;
 }
 
-
-
 // Fonction pour afficher la barre de recherche et traiter la recherche
 
 function apisearchplugin_render_search_bar() {
     $search_query = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '';
-
-    echo '<form method="GET" id="apisearchplugin-search-form" class="apisearchplugin-search-bar">';
-    
-        echo '<input type="hidden" name="page" value="apisearchplugin">';
-        echo '<input type="text" name="s" value="' . esc_attr($search_query) . '" placeholder="Rechercher une résidence...">';
-        echo '<input type="submit" value="Rechercher">';
-    
-    echo '</form>';
-
-    // Container for autocomplete suggestions
-    echo '<div id="autocomplete-container"></div>';
-
     return $search_query;
 }
 
-
-
-
+function apisearchplugin_render_search_bar_page() {
+    include plugin_dir_path(__FILE__) . 'templates/search_bar_template.php';
+}
 
 // Fonction pour afficher les résidences en format carte
-
 function apisearchplugin_display_residences($search_query = '') {
-
     $residences = call_api_and_get_residences();
+    return $residences;
+}
 
-    if (!$residences || !is_array($residences)) {    //!is_array vérifier si une variable n'est pas un tableau
-
-        echo '<p>Aucune résidence trouvée.</p>';
-        return;
-
-    }
-
-    echo '<div class="apisearchplugin-cards-container">';
-
-    foreach ($residences as $residence) {
-
-        if ($search_query && stripos($residence->title, $search_query) === false && stripos($residence->city, $search_query) === false) {  //vérifier si une sous-chaîne n'est pas présente dans une chaîne de caractères, sans tenir compte de la casse (majuscule ou minuscule)
-
-            continue;
-
-        }
-
-        $title = esc_html($residence->title); //convertit les caractères spéciaux en leurs équivalents HTML
-        $address = esc_html($residence->address . ', ' . $residence->zip_code . ' ' . $residence->city);
-        $price = isset($residence->preview->rent_amount_from) ? esc_html($residence->preview->rent_amount_from) : 'Prix non disponible';
-        $picture_url = !empty($residence->pictures) ? esc_url($residence->pictures[0]->url) : 'https://via.placeholder.com/150';
-
-        $details_url = add_query_arg('residence_id', $residence->id, admin_url('admin.php?page=apisearchplugin')); //Syntaxe :add_query_arg($key, $value, $url); construire une URL avec des paramètres de requête
-
-
-        echo '<div class="apisearchplugin-card">';
-         
-            echo '<img src="' . $picture_url . '" alt="' . $title . '" class="apisearchplugin-card-img">';
-         
-            echo '<div class="apisearchplugin-card-body">';
-       
-                  echo '<h3 class="apisearchplugin-card-title">' . $title . '</h3>';
-        
-                  echo '<p class="apisearchplugin-card-address">' . $address . '</p>';
-        
-                  echo '<p class="apisearchplugin-card-price">' . $price . ' €</p>';
-        
-                  echo '<a href="' . esc_url($details_url) . '" class="apisearchplugin-card-button" data-id="' . esc_attr($residence->id) . '">Voir les détails</a>';
-         
-             echo '</div>';
-        echo '</div>';
-    }
-
-    echo '</div>';
-
+function apisearchplugin_display_residences_page($search_query = '') {
+    include plugin_dir_path(__FILE__) . 'templates/display_residences_template.php';
 }
 
 
-
 // Fonction pour afficher les détails d'une résidence
-
-
 function apisearchplugin_display_residence_details($residence_id) {
     $residences = call_api_and_get_residences();
     $residence = null;
@@ -177,41 +119,7 @@ function apisearchplugin_display_residence_details($residence_id) {
         }
     }
 
-    if (!$residence) {
-        echo '<p>Résidence non trouvée.</p>';
-        return;
-    }
-
-    $title = esc_html($residence->title);
-    $address = esc_html($residence->address . ', ' . $residence->zip_code . ' ' . $residence->city);
-    $picture_url = !empty($residence->pictures) ? esc_url($residence->pictures[0]->url) : 'https://via.placeholder.com/150';
-
-    echo '<div class="apisearchplugin-details">';
-        echo '<h2>' . $title . '</h2>';
-        echo '<img src="' . $picture_url . '" alt="' . $title . '">';
-        echo '<p>Adresse : ' . $address . '</p>';
-        echo '<h3>Offres</h3>';
-        echo '<ul class="apisearchplugin-details-offers">';
-            foreach ($residence->offers as $offer) {
-                echo '<li>' . esc_html($offer->optional_comment_equipped) . '</li>';
-            }
-        echo '</ul>';
-        echo '<h3>Aperçu</h3>';
-        echo '<div class="apisearchplugin-details-preview">';
-            echo '<h3>Surface</h3>';
-            echo '<p>' . esc_html($residence->preview->surface_from) . ' - ' . esc_html($residence->preview->surface_to) . ' m²</p>';
-            echo '<h3>Loyer à partir de</h3>';
-            echo '<p>' . esc_html($residence->preview->rent_amount_from) . ' €</p>';
-            echo '<h3>Nombre de logements</h3>';
-            echo '<p>' . esc_html($residence->preview->quantity) . '</p>';
-            echo '<h3>Services</h3>';
-            echo '<ul>';
-                foreach ($residence->preview->residence_services as $service) {
-                    echo '<li>' . esc_html($service->title) . ': ' . esc_html($service->description) . ' (' . esc_html($service->price) . ')</li>';
-                }
-            echo '</ul>';
-        echo '</div>';
-    echo '</div>';
+    include plugin_dir_path(__FILE__) . 'templates/display_residence_details_template.php';
 }
 
 // Fonction pour rendre la page d'administration du plugin
@@ -225,34 +133,13 @@ function apisearchplugin_render_admin_page() {
          $residence_id = isset($_GET['residence_id']) ? intval($_GET['residence_id']) : 0;
 
          if ($residence_id) {
-
-             // Afficher les détails de la résidence
              apisearchplugin_display_residence_details($residence_id);
-
         } else {
-
-             // Afficher la barre de recherche et la liste des résidences
-             $search_query = apisearchplugin_render_search_bar();
-             apisearchplugin_display_residences($search_query);
-    
-        }
+             $search_query = apisearchplugin_render_search_bar_page();
+             apisearchplugin_display_residences_page($search_query);
+             }
     echo '</div>';
 }
-
-
-// Fonction pour rendre la page de recherche
-
-function apisearchplugin_render_search_page() {
-
-    echo '<div id="apisearchplugin">';
-       
-        $search_query = apisearchplugin_render_search_bar();
-        apisearchplugin_display_residences($search_query);
-    
-    echo '</div>';
-
-}
-
 
 
 function apisearchplugin_admin_enqueue_scripts() {
@@ -284,7 +171,7 @@ function apisearchplugin_enqueue_scripts() {
     wp_enqueue_style('apisearchplugin-styles', plugin_dir_url(__FILE__) . 'front_apisearchplugin.css');
 }
 add_action('wp_enqueue_scripts', 'apisearchplugin_enqueue_scripts');
-
+add_action('admin_enqueue_scripts', 'api_searchplugin_add_styles');
 
 
 
@@ -297,16 +184,12 @@ function apisearchplugin_autocomplete_residences() {
     $suggestions = array();
 
     if ($residences && is_array($residences)) {
-    
         foreach ($residences as $residence) {
             if (stripos($residence->title, $search_query) !== false || stripos($residence->city, $search_query) !== false) {
-    
                 $suggestions[] = esc_html($residence->title);
-    
             }
         }
     }
-
     wp_send_json_success($suggestions);
 }
 
@@ -315,50 +198,39 @@ add_action('wp_ajax_nopriv_autocomplete_residences', 'apisearchplugin_autocomple
 
 
 
-// AJAX function to search for residences
+// AJAX function to search for residences :mettre à jour dynamiquement le contenu de la page sans recharger la page entière
 function apisearchplugin_ajax_search_residences() {
-
     check_ajax_referer('apisearchplugin_nonce', 'nonce');
     $search_query = isset($_POST['s']) ? sanitize_text_field($_POST['s']) : '';
     $residences = call_api_and_get_residences();
-    
+
     if (!$residences || !is_array($residences)) {
         wp_send_json_error('No residences found.');
         return;
     }
-    
+
+    // Filtrer les résidences en fonction de la recherche
+    $filtered_residences = array_filter($residences, function($residence) use ($search_query) {
+        return stripos($residence->title, $search_query) !== false ||
+               stripos($residence->city, $search_query) !== false;
+    });
+
     ob_start();
-    
-    foreach ($residences as $residence) {
-    
-        if ($search_query && stripos($residence->title, $search_query) === false && stripos($residence->city, $search_query) === false) {
-            continue;
-        }
-    
-        $title = esc_html($residence->title);
-        $address = esc_html($residence->address . ', ' . $residence->zip_code . ' ' . $residence->city);
-        $picture_url = !empty($residence->pictures) ? esc_url($residence->pictures[0]->url) : 'https://via.placeholder.com/150';
-    
-    
-        echo '<div class="apisearchplugin-card">';
-            echo '<img src="' . $picture_url . '" alt="' . $title . '" class="apisearchplugin-card-img">';
-            echo '<div class="apisearchplugin-card-body">';
-              echo '<h3 class="apisearchplugin-card-title">' . $title . '</h3>';
-              echo '<p class="apisearchplugin-card-address">' . $address . '</p>';
-              echo '<a href="#" class="apisearchplugin-card-button" data-id="' . esc_attr($residence->id) . '">Voir les détails</a>';
-            echo '</div>';
-        echo '</div>';
-    }
-    
+
+    // Inclure le template avec les résidences filtrées
+    include plugin_dir_path(__FILE__) . 'templates/ajax_search_residences_template.php';
+
     $output = ob_get_clean();
-    
+
     wp_send_json_success($output);
 }
-
 
 add_action('wp_ajax_search_residences', 'apisearchplugin_ajax_search_residences');
 add_action('wp_ajax_nopriv_search_residences', 'apisearchplugin_ajax_search_residences');
 
+
+add_action('wp_ajax_search_residences', 'apisearchplugin_ajax_search_residences');
+add_action('wp_ajax_nopriv_search_residences', 'apisearchplugin_ajax_search_residences');
 
 // AJAX function to get residence details
 
@@ -378,8 +250,6 @@ add_action('wp_ajax_residence_details', 'apisearchplugin_ajax_residence_details'
 add_action('wp_ajax_nopriv_residence_details', 'apisearchplugin_ajax_residence_details');
 
 
-
-// Enqueue front-end styles
 function api_searchplugin_add_styles() {
     wp_enqueue_style('apisearchplugin-styles', plugin_dir_url(__FILE__) . 'front_apisearchplugin.css');
 }

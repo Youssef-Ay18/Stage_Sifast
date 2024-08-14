@@ -3,7 +3,7 @@
 Plugin Name: Search Plugin
 Description: A simple WordPress plugin with CRUD functionalities for managing articles and categories.
 Version: 1.0
-Author: Your Name
+Author: Youssef
 License: GPL2
 */
 
@@ -36,20 +36,15 @@ function searchplugin_add_menu() {
     );
 }
 
-
 add_action('admin_menu', 'searchplugin_add_menu');
-
 
 // Create or update the database table
 function searchplugin_create_table() {
-
     global $wpdb;
     $table_name = $wpdb->prefix . 'searchplugin_data';
     $charset_collate = $wpdb->get_charset_collate();
 
-    // SQL to create table if not exists
-
-        $sql = "CREATE TABLE IF NOT EXISTS $table_name (
+    $sql = "CREATE TABLE IF NOT EXISTS $table_name (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
         name varchar(255) NOT NULL,
         category varchar(255) DEFAULT NULL,
@@ -59,219 +54,84 @@ function searchplugin_create_table() {
 
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($sql);
-
 }
 
 register_activation_hook(__FILE__, 'searchplugin_create_table');
 
-// Add/Edit Article Page 
-
 function searchplugin_add_article_page() {
-    global $wpdb;
-    $table_name = $wpdb->prefix . 'searchplugin_data';
-
-    // Handle form submission
-    if (isset($_POST['submit'])) {
-        $name = sanitize_text_field($_POST['name']);
-        $brand = sanitize_text_field($_POST['brand']);
-        $categories = isset($_POST['categories']) ? array_map('sanitize_text_field', $_POST['categories']) : array();
-
-        // Combine categories into a comma-separated string
-        $category = implode(', ', $categories);
-
-        if (isset($_POST['edit_id']) && !empty($_POST['edit_id'])) {
-            $edit_id = intval($_POST['edit_id']);
-            $wpdb->update($table_name, compact('name', 'category', 'brand'), ['id' => $edit_id]);
-        } else {
-            $wpdb->insert($table_name, compact('name', 'category', 'brand'));
-        }
-
-        echo "<script>location.replace('" . admin_url('admin.php?page=searchplugin-view-articles') . "');</script>";
-    }
-
-    $edit_id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
-    $name = $brand = '';
-    $selected_categories = array();
-
-    if ($edit_id) {
-        $article = $wpdb->get_row("SELECT * FROM $table_name WHERE id = $edit_id");
-        if ($article) {
-            $name = $article->name;
-            $brand = $article->brand;
-            $selected_categories = explode(', ', $article->category);
-        }
-    }
-    ?>
-    <div class="wrap searchplugin-admin">
-        <h1><?php echo $edit_id ? 'Edit Article' : 'Add Article'; ?></h1>
-        <form method="post">
-            <table class="form-table searchplugin-form-table">
-                <tr>
-                    <th><label for="name">Article Name</label></th>
-                    <td><input type="text" id="name" name="name" value="<?php echo esc_attr($name); ?>" required></td>
-                </tr>
-                <tr>
-                    <th><label for="brand">Brand</label></th>
-                    <td><input type="text" id="brand" name="brand" value="<?php echo esc_attr($brand); ?>" required></td>
-                </tr>
-                <tr>
-                    <th><label>Category</label></th>
-                    <td>
-                        <?php
-                        $all_categories = $wpdb->get_results("SELECT DISTINCT category FROM $table_name WHERE category IS NOT NULL");
-                        if ($all_categories) {
-                            foreach ($all_categories as $cat) {
-                                $checked = in_array($cat->category, $selected_categories) ? 'checked' : '';
-                                echo '<input type="checkbox" name="categories[]" value="' . esc_attr($cat->category) . '" ' . $checked . '> ' . esc_html($cat->category) . '<br>';
-                            }
-                        }
-                        ?>
-                    </td>
-                </tr>
-            </table>
-            <?php if ($edit_id) { ?>
-                <input type="hidden" name="edit_id" value="<?php echo esc_attr($edit_id); ?>" />
-            <?php } ?>
-            <p class="submit">
-                <input type="submit" name="submit" value="<?php echo $edit_id ? 'Update' : 'Add'; ?>" class="button button-primary">
-                <a href="<?php echo admin_url('admin.php?page=searchplugin-view-articles'); ?>" class="button button-secondary">Cancel</a>
-            </p>
-        </form>
-    </div>
-    <?php
+    include plugin_dir_path(__FILE__) . 'templates/add_article.php';
 }
 
-
-// View Articles Page
-function searchplugin_view_articles_page() {
-    
-    global $wpdb;
-    $table_name = $wpdb->prefix . 'searchplugin_data';
-    $results = $wpdb->get_results("SELECT * FROM $table_name");
-    ?>
-    
-    <div class="wrap">
-        <h1>View Articles</h1>
-        <table class="wp-list-table widefat fixed striped">
-            <thead>
-                <tr>
-
-                    <th scope="col" class="manage-column">ID</th>
-                    <th scope="col" class="manage-column">Article Name</th>
-                    <th scope="col" class="manage-column">Category</th>
-                    <th scope="col" class="manage-column">Brand</th>
-                    <th scope="col" class="manage-column">Actions</th>
-
-                </tr>
-            </thead>
-            <tbody>
-
-                <?php if ($results) {
-
-                    foreach ($results as $row) { ?>
-                        <tr>
-
-                            <td><?php echo esc_html($row->id); ?></td>
-                            <td><?php echo esc_html($row->name); ?></td>
-                            <td><?php echo esc_html($row->category); ?></td>
-                            <td><?php echo esc_html($row->brand); ?></td>
-                            <td>
-
-                                <a href="<?php echo admin_url('admin.php?page=searchplugin-add-article&edit_id=' . esc_attr($row->id)); ?>" class="button">Edit</a>
-                                <form method="post" style="display:inline;">
-
-                                    <input type="hidden" name="delete_id" value="<?php echo esc_attr($row->id); ?>" />
-                                    <input type="submit" name="delete" value="Delete" class="button button-secondary" onclick="return confirm('Are you sure you want to delete this article?');" />
-
-                                </form>
-                            </td>
-                        </tr>
-
-                    <?php }
-                } else { ?>
-
-                    <tr>
-                        <td colspan="5">No data found.</td>
-                    </tr>
-
-                <?php } ?>
-            </tbody>
-        </table>
-
-        <a href="<?php echo admin_url('admin.php?page=searchplugin-add-article'); ?>" class="button button-primary">Add Article</a>
-
-    </div>
-    <?php
-    if (isset($_POST['delete'])) {
-
-        $delete_id = intval($_POST['delete_id']);
-        $wpdb->delete($table_name, ['id' => $delete_id]);
-        echo "<script>location.replace('" . admin_url('admin.php?page=searchplugin-view-articles') . "');</script>";
-
-    }
-}
-
-// Manage Categories Page
 function searchplugin_manage_categories_page() {
+    include plugin_dir_path(__FILE__) . 'templates/manage_categories.php';
+}
 
+function searchplugin_view_articles_page() {
+    include plugin_dir_path(__FILE__) . 'templates/view_articles.php';
+}
+
+function searchplugin_add_article($name, $category, $brand) {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'searchplugin_data';
+    $wpdb->insert($table_name, compact('name', 'category', 'brand'));
+
+}
+
+function searchplugin_edit_article($edit_id, $name, $category, $brand) {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'searchplugin_data';
+    $edit_id = intval($_POST['edit_id']);
+    $wpdb->update($table_name, compact('name', 'category', 'brand'), ['id' => $edit_id]);
+}
+
+function searchplugin_delete_article($id) {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'searchplugin_data';
+    $wpdb->delete($table_name, ['id' => intval($id)]);
+}
+
+function searchplugin_get_all_articles() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'searchplugin_data';
+    return $wpdb->get_results("SELECT * FROM $table_name");
+}
+
+function searchplugin_manage_categories() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'searchplugin_data';
 
     // Handle form submission for adding a new category
     if (isset($_POST['submit'])) {
-
         $category_name = sanitize_text_field($_POST['category_name']);
-        $wpdb->insert($table_name, array('category' => $category_name));
-        echo "<div class='notice notice-success'><p>Category added successfully!</p></div>";
-
+        
+        // Insert the new category if it does not already exist
+        $existing_category = $wpdb->get_var($wpdb->prepare(
+            "SELECT COUNT(*) FROM $table_name WHERE category = %s",
+            $category_name
+        ));
+        
+        if ($existing_category == 0) {
+            $wpdb->insert($table_name, array('category' => $category_name));
+            echo "<div class='notice notice-success'><p>Category added successfully!</p></div>";
+        } else {
+            echo "<div class='notice notice-error'><p>Category already exists.</p></div>";
+        }
     }
 
     // Fetch all categories
     $categories = $wpdb->get_results("SELECT DISTINCT category FROM $table_name WHERE category IS NOT NULL");
 
-    ?>
-    <div class="wrap">
-        <h1>Manage Categories</h1>
-
-        <!-- Form to add a new category -->
-        <form method="post">
-            <table class="form-table">
-                <tr>
-
-                    <th><label for="category_name">Category Name</label></th>
-                    <td><input type="text" id="category_name" name="category_name" required></td>
-
-                </tr>
-            </table>
-            <p class="submit">
-
-                <input type="submit" name="submit" value="Add Category" class="button button-primary">
-
-            </p>
-        </form>
-
-        <!-- Display existing categories -->
-        <h2>Existing Categories</h2>
-
-        <?php if ($categories) { ?>
-
-            <ul class="category-list">
-                <?php foreach ($categories as $category) { ?>
-                    <li><?php echo esc_html($category->category); ?></li>
-                <?php } ?>
-            </ul>
-
-        <?php } else { ?>
-
-            <p>No categories found.</p>
-
-        <?php } ?>
-    </div>
-    <?php
+    return array('categories' => $categories);
 }
 
-// Search Shortcode
 
+// Function to include the template for the shortcode page
+function searchplugin_search_shortcode_page($atts) {
+    include plugin_dir_path(__FILE__) . 'templates/search_shortcode_template.php';
+}
+
+
+// Function to handle the shortcode logic without HTML
 function searchplugin_search_shortcode($atts) {
     global $wpdb;
     $table_name = $wpdb->prefix . 'searchplugin_data';
@@ -290,55 +150,17 @@ function searchplugin_search_shortcode($atts) {
 
     $results = $wpdb->get_results($sql);
 
+    // Use output buffering to capture the template output
     ob_start();
-    ?>
-    <div class="searchplugin-shortcode">
-        <div class="search-form">
-            <form method="post">
-                <div class="form-group">
-                    <label for="search">Search:</label>
-                    <input type="text" id="search" name="search" value="<?php echo esc_attr($search_query); ?>" class="search-input" autocomplete="off">
-                </div>
-                <div class="form-group categories">
-                    <label>Category:</label><br>
-                    <?php
-                    $all_categories = $wpdb->get_results("SELECT DISTINCT category FROM $table_name WHERE category IS NOT NULL");
-                    if ($all_categories) {
-                        foreach ($all_categories as $cat) {
-                            $checked = in_array($cat->category, $selected_categories) ? 'checked' : '';
-                            echo '<input type="checkbox" name="categories[]" value="' . esc_attr($cat->category) . '" ' . $checked . '> ' . esc_html($cat->category) . '<br>';
-                        }
-                    }
-                    ?>
-                </div>
-                <button type="submit" name="submit" class="btn btn-primary">Search</button>
-            </form>
-        </div>
+    searchplugin_search_shortcode_page($atts);
+    $html = ob_get_clean();
 
-        <?php if (!empty($search_query) || !empty($selected_categories)) { ?>
-            <div class="search-results">
-                <?php if (!empty($results)) { ?>
-                    <h2>Search Results:</h2>
-                    <ul class="search-results-list">
-                        <?php foreach ($results as $result) { ?>
-                            <li class="search-result-item">
-                                <?php echo esc_html($result->name); ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                <?php } else { ?>
-                    <p>No results found.</p>
-                <?php } ?>
-            </div>
-        <?php } ?>
-    </div>
-    <?php
-    return ob_get_clean();
+    return $html;
 }
-
 
 add_shortcode('searchplugin_search', 'searchplugin_search_shortcode');
 
+// Autocomplete handler
 function searchplugin_autocomplete() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'searchplugin_data';
@@ -354,21 +176,17 @@ function searchplugin_autocomplete() {
 
     wp_send_json($results);
 }
+
 add_action('wp_ajax_searchplugin_autocomplete', 'searchplugin_autocomplete');
 add_action('wp_ajax_nopriv_searchplugin_autocomplete', 'searchplugin_autocomplete');
 
-
+// Enqueue admin styles and scripts
 function searchplugin_enqueue_admin_styles() {
     wp_enqueue_style('searchplugin-admin-style', plugins_url('searchplugin.css', __FILE__));
 }
 add_action('admin_enqueue_scripts', 'searchplugin_enqueue_admin_styles');
 
-function searchplugin_enqueue_styles() {
-    wp_enqueue_style('searchplugin-style', plugins_url('searchplugin.css', __FILE__));
-}
-add_action('wp_enqueue_scripts', 'searchplugin_enqueue_styles');
-
-
+// Enqueue public styles and scripts
 function searchplugin_enqueue_scripts() {
     wp_enqueue_style('searchplugin-style', plugins_url('searchplugin.css', __FILE__));
     wp_enqueue_script('searchplugin-script', plugins_url('searchplugin.js', __FILE__), array('jquery'), null, true);
@@ -377,6 +195,5 @@ function searchplugin_enqueue_scripts() {
     ));
 }
 add_action('wp_enqueue_scripts', 'searchplugin_enqueue_scripts');
-
 
 ?>

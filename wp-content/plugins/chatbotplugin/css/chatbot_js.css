@@ -1,0 +1,201 @@
+/* Style général pour le chatbot */
+#chat-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    height: 400px; /* Ajustez la hauteur selon vos besoins */
+    font-family: 'Arial', sans-serif;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #e0f7fa;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #ffffff;
+    align-self: flex-start;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.card-address,
+.card-price {
+    font-size: 14px;
+    margin: 0;
+}
+
+.card-details-button {
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-details-button:hover {
+    background-color: #005177;
+}
+
+/* Style pour les détails de la résidence */
+.apisearchplugin-details {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.apisearchplugin-details h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.apisearchplugin-details img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.apisearchplugin-details-offers,
+.apisearchplugin-details-services {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+}
+
+.apisearchplugin-details-offers li,
+.apisearchplugin-details-services li {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+.apisearchplugin-details-offers li:before,
+.apisearchplugin-details-services li:before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    background-color: #0073aa;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+}
+
+.apisearchplugin-details-offers li:hover,
+.apisearchplugin-details-services li:hover {
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.apisearchplugin-details-preview {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+.apisearchplugin-details-preview h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.apisearchplugin-details-preview p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.apisearchplugin-details-preview ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.apisearchplugin-details-preview li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.apisearchplugin-details-preview li:last-child {
+    border-bottom: none;
+}
+
+.apisearchplugin-details-preview li:before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    background-color: #0073aa;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+}

@@ -24,32 +24,7 @@ add_action('wp_enqueue_scripts', 'chatbot_plugin_enqueue_scripts');
 
 function chatbot_plugin_shortcode() {
     ob_start();
-    ?>
-    <div class="chat-container">
-        <div class="chat-box" id="chat-box">
-            <div class="message bot-message">
-                Hi there!<br>How can I help you today?
-            </div>
-        </div>
-        <div class="options">
-            <button class="option-button" data-option="name">
-                <i class="fas fa-home"></i> Nom de la résidence
-            </button>
-            <button class="option-button" data-option="city">
-                <i class="fas fa-city"></i> Ville
-            </button>
-            <button class="option-button" data-option="budget">
-                <i class="fas fa-dollar-sign"></i> Budget
-            </button>
-        </div>
-        <div class="input-container">
-            <input type="text" id="user-input" class="chat-input" placeholder="Type a message..." />
-            <button onclick="sendMessage()" class="send-button">
-                <i class="fas fa-paper-plane"></i> Envoyer
-            </button>
-        </div>
-    </div>
-    <?php
+    include plugin_dir_path(__FILE__) . 'views/chatbot_plugin_shortcode.php';
     return ob_get_clean();
 }
 
@@ -261,4 +236,45 @@ function chatbot_plugin_handle_details() {
 
 add_action('wp_ajax_chatbot_plugin_handle_details', 'chatbot_plugin_handle_details');
 add_action('wp_ajax_nopriv_chatbot_plugin_handle_details', 'chatbot_plugin_handle_details');
+
+
+// Fonction pour obtenir le HTML de la carte
+function get_card_html($residence) {
+    ob_start();
+    include plugin_dir_path(__FILE__) . 'views/chatbot_card.php';
+    return ob_get_clean();
+}
+
+// Fonction pour obtenir le HTML des détails
+function get_details_content($details) {
+    ob_start();
+    include plugin_dir_path(__FILE__) . 'views/chatbot_details.php';
+    return ob_get_clean();
+}
+
+// Point de terminaison pour gérer la requête AJAX pour la carte
+add_action('wp_ajax_chatbot_get_card_html', 'chatbot_get_card_html');
+add_action('wp_ajax_nopriv_chatbot_get_card_html', 'chatbot_get_card_html');
+
+function chatbot_get_card_html() {
+    $residence = $_POST['residence']; // Assume the residence data is sent in POST request
+    echo get_card_html($residence);
+    wp_die();
+}
+
+// Point de terminaison pour gérer la requête AJAX pour les détails
+add_action('wp_ajax_chatbot_get_details_content', 'chatbot_get_details_content');
+add_action('wp_ajax_nopriv_chatbot_get_details_content', 'chatbot_get_details_content');
+
+function chatbot_get_details_content() {
+    $details = $_POST['details']; // Assume the details data is sent in POST request
+    echo get_details_content($details);
+    wp_die();
+}
+
+
+function chatbotplugin_enqueue_styles() {
+    wp_enqueue_style('chatbotplugin-css', plugin_dir_url(__FILE__) . 'css/chatbot_js.css');
+}
+add_action('wp_enqueue_scripts', 'chatbotplugin_enqueue_styles');
 
