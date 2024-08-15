@@ -59,15 +59,15 @@ function searchplugin_create_table() {
 register_activation_hook(__FILE__, 'searchplugin_create_table');
 
 function searchplugin_add_article_page() {
-    include plugin_dir_path(__FILE__) . 'templates/add_article.php';
+    include plugin_dir_path(__FILE__) . 'views/add_article.php';
 }
 
 function searchplugin_manage_categories_page() {
-    include plugin_dir_path(__FILE__) . 'templates/manage_categories.php';
+    include plugin_dir_path(__FILE__) . 'views/manage_categories.php';
 }
 
 function searchplugin_view_articles_page() {
-    include plugin_dir_path(__FILE__) . 'templates/view_articles.php';
+    include plugin_dir_path(__FILE__) . 'views/view_articles.php';
 }
 
 function searchplugin_add_article($name, $category, $brand) {
@@ -127,7 +127,7 @@ function searchplugin_manage_categories() {
 
 // Function to include the template for the shortcode page
 function searchplugin_search_shortcode_page($atts) {
-    include plugin_dir_path(__FILE__) . 'templates/search_shortcode_template.php';
+    include plugin_dir_path(__FILE__) . 'views/search_shortcode_template.php';
 }
 
 
@@ -188,8 +188,8 @@ add_action('admin_enqueue_scripts', 'searchplugin_enqueue_admin_styles');
 
 // Enqueue public styles and scripts
 function searchplugin_enqueue_scripts() {
-    wp_enqueue_style('searchplugin-style', plugins_url('searchplugin.css', __FILE__));
-    wp_enqueue_script('searchplugin-script', plugins_url('searchplugin.js', __FILE__), array('jquery'), null, true);
+    wp_enqueue_style('searchplugin-style', plugins_url('css/searchplugin.css', __FILE__));
+    wp_enqueue_script('searchplugin-script', plugins_url('js/searchplugin.js', __FILE__), array('jquery'), null, true);
     wp_localize_script('searchplugin-script', 'searchplugin_params', array(
         'ajax_url' => admin_url('admin-ajax.php'),
     ));

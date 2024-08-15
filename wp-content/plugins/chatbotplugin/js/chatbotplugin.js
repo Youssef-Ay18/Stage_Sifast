@@ -42,6 +42,7 @@ function selectOption(option) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
+
 function sendMessage() {
     const chatBox = document.getElementById('chat-box');
     const userInput = document.getElementById('user-input');
@@ -112,19 +113,24 @@ function sendMessage() {
     }
 }
 
+
 function fetchDetails(residenceId) {
     jQuery.ajax({
         url: chatbotplugin_ajax.url,
         type: 'POST',
         data: {
-            action: 'chatbot_get_details_content',
-            details: { id: residenceId } // Example, adjust as needed
+            action: 'chatbot_plugin_fetch_details',
+            residence_id: residenceId
         },
-        success: function(detailsContent) {
-            const detailsWindow = window.open('', '_blank'); // Ouvrir une nouvelle fenêtre
-            detailsWindow.document.open();
-            detailsWindow.document.write(detailsContent);
-            detailsWindow.document.close();
+        success: function(response) {
+            if (response.success) {
+                const detailsWindow = window.open('', '_blank');
+                detailsWindow.document.open();
+                detailsWindow.document.write(response.data.html);
+                detailsWindow.document.close();
+            } else {
+                console.error('Error fetching details:', response.data.message);
+            }
         },
         error: function(xhr, status, error) {
             console.error('AJAX Error:', status, error);

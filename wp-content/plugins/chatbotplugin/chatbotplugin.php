@@ -8,10 +8,10 @@ Author: Youssef
 
 function chatbot_plugin_enqueue_scripts() {
     // Enqueue CSS file
-    wp_enqueue_style('chatbotplugin-css', plugin_dir_url(__FILE__) . 'chatbotplugin.css', array(), '1.0', 'all');
+    wp_enqueue_style('chatbotplugin-css', plugin_dir_url(__FILE__) . 'css/chatbotplugin.css', array(), '1.0', 'all');
     
     // Enqueue JS file
-    wp_enqueue_script('chatbotplugin-js', plugin_dir_url(__FILE__) . 'chatbotplugin.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('chatbotplugin-js', plugin_dir_url(__FILE__) . 'js/chatbotplugin.js', array('jquery'), '1.0', true);
 
     // Localize script with AJAX URL
     wp_localize_script('chatbotplugin-js', 'chatbotplugin_ajax', array('url' => admin_url('admin-ajax.php')));
@@ -138,14 +138,15 @@ function fetch_residences_by_budget($budget) {
     return $results;
 }
 
+
 function chatbot_plugin_fetch_details() {
-    if (!isset($_POST['id'])) {
+    if (!isset($_POST['residence_id'])) {
         wp_send_json_error(array('message' => 'Invalid request.'));
     }
 
-    $id = sanitize_text_field($_POST['id']);
+    $residence_id = sanitize_text_field($_POST['residence_id']);
+    $url = 'https://admin.arpej.fr/api/wordpress/residences/' . $residence_id;
 
-    $url = 'https://admin.arpej.fr/api/wordpress/residences/' . $id;
     $args = array(
         'headers' => array(
             'X-Auth-Key' => 'wordpress',
@@ -156,42 +157,47 @@ function chatbot_plugin_fetch_details() {
     $response = wp_remote_get($url, $args);
 
     if (is_wp_error($response)) {
-        wp_send_json_error(array('message' => 'Failed to fetch details.'));
+        wp_send_json_error(array('message' => 'Error fetching details.'));
     }
 
     $body = wp_remote_retrieve_body($response);
-    $residence = json_decode($body);
+    $residence = json_decode($body, true);
 
     if (!$residence) {
-        wp_send_json_error(array('message' => 'No details found.'));
+        wp_send_json_error(array('message' => 'Details not found.'));
     }
 
     $details = array(
-        'picture' => isset($residence->pictures[0]->url) ? $residence->pictures[0]->url : '',
-        'title' => $residence->title,
-        'address' => $residence->address,
-        'city' => $residence->city,
-        'offers' => array_map(function($offer) {
-            return esc_html($offer->optional_comment_equipped);
-        }, $residence->offers),
-        'surface_from' => esc_html($residence->preview->surface_from),
-        'surface_to' => esc_html($residence->preview->surface_to),
-        'rent_amount_from' => esc_html($residence->preview->rent_amount_from),
-        'quantity' => esc_html($residence->preview->quantity),
-        'services' => array_map(function($service) {
-            return (object)array(
-                'title' => esc_html($service->title),
-                'description' => esc_html($service->description),
-                'price' => esc_html($service->price)
-            );
-        }, $residence->preview->residence_services)
+        'title' => $residence['title'],
+        'address' => $residence['address'],
+        'city' => $residence['city'],
+        'picture' => $residence['pictures'][0]['url'],
+        'offers' => array_column($residence['offers'], 'optional_comment_equipped'),
+        'preview' => array(
+            'surface_from' => $residence['preview']['surface_from'],
+            'surface_to' => $residence['preview']['surface_to'],
+            'rent_amount_from' => $residence['preview']['rent_amount_from'],
+            'quantity' => $residence['preview']['quantity'],
+            'residence_services' => array_map(function ($service) {
+                return array(
+                    'title' => $service['title'],
+                    'description' => $service['description'],
+                    'price' => $service['price']
+                );
+            }, $residence['preview']['residence_services'])
+        )
     );
 
-    wp_send_json_success($details);
+    ob_start();
+    include plugin_dir_path(__FILE__) . 'views/residence_details_template.php';
+    $html = ob_get_clean();
+
+    wp_send_json_success(array('html' => $html));
 }
 
 add_action('wp_ajax_chatbot_plugin_fetch_details', 'chatbot_plugin_fetch_details');
 add_action('wp_ajax_nopriv_chatbot_plugin_fetch_details', 'chatbot_plugin_fetch_details');
+
 
 // Add this function to handle details requests
 function chatbot_plugin_handle_details() {
@@ -245,36 +251,16 @@ function get_card_html($residence) {
     return ob_get_clean();
 }
 
-// Fonction pour obtenir le HTML des détails
-function get_details_content($details) {
-    ob_start();
-    include plugin_dir_path(__FILE__) . 'views/chatbot_details.php';
-    return ob_get_clean();
-}
-
 // Point de terminaison pour gérer la requête AJAX pour la carte
 add_action('wp_ajax_chatbot_get_card_html', 'chatbot_get_card_html');
 add_action('wp_ajax_nopriv_chatbot_get_card_html', 'chatbot_get_card_html');
 
 function chatbot_get_card_html() {
-    $residence = $_POST['residence']; // Assume the residence data is sent in POST request
+    $residence = isset($_POST['residence']) ? $_POST['residence'] : array();
     echo get_card_html($residence);
     wp_die();
 }
 
-// Point de terminaison pour gérer la requête AJAX pour les détails
-add_action('wp_ajax_chatbot_get_details_content', 'chatbot_get_details_content');
-add_action('wp_ajax_nopriv_chatbot_get_details_content', 'chatbot_get_details_content');
-
-function chatbot_get_details_content() {
-    $details = $_POST['details']; // Assume the details data is sent in POST request
-    echo get_details_content($details);
-    wp_die();
-}
 
 
-function chatbotplugin_enqueue_styles() {
-    wp_enqueue_style('chatbotplugin-css', plugin_dir_url(__FILE__) . 'css/chatbot_js.css');
-}
-add_action('wp_enqueue_scripts', 'chatbotplugin_enqueue_styles');
 

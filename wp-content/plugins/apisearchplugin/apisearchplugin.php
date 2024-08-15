@@ -93,7 +93,7 @@ function apisearchplugin_render_search_bar() {
 }
 
 function apisearchplugin_render_search_bar_page() {
-    include plugin_dir_path(__FILE__) . 'templates/search_bar_template.php';
+    include plugin_dir_path(__FILE__) . 'views/search_bar.php';
 }
 
 // Fonction pour afficher les résidences en format carte
@@ -103,7 +103,7 @@ function apisearchplugin_display_residences($search_query = '') {
 }
 
 function apisearchplugin_display_residences_page($search_query = '') {
-    include plugin_dir_path(__FILE__) . 'templates/display_residences_template.php';
+    include plugin_dir_path(__FILE__) . 'views/display_residences.php';
 }
 
 
@@ -119,7 +119,7 @@ function apisearchplugin_display_residence_details($residence_id) {
         }
     }
 
-    include plugin_dir_path(__FILE__) . 'templates/display_residence_details_template.php';
+    include plugin_dir_path(__FILE__) . 'views/display_residence_details.php';
 }
 
 // Fonction pour rendre la page d'administration du plugin
@@ -144,7 +144,7 @@ function apisearchplugin_render_admin_page() {
 
 function apisearchplugin_admin_enqueue_scripts() {
     // Enqueue the new JS file for autocomplete
-    wp_enqueue_script('apisearchplugin-autocomplete', plugin_dir_url(__FILE__) . 'apisearchplugin-autocomplete.js', array('jquery'), null, true);
+    wp_enqueue_script('apisearchplugin-autocomplete', plugin_dir_url(__FILE__) . 'js/apisearchplugin-autocomplete.js', array('jquery'), null, true);
     
     // Localize the script for AJAX
     wp_localize_script('apisearchplugin-autocomplete', 'apisearchplugin_ajax', array(
@@ -160,7 +160,7 @@ add_action('admin_enqueue_scripts', 'apisearchplugin_admin_enqueue_scripts');
 // Enqueue the JavaScript file for AJAX
 
 function apisearchplugin_enqueue_scripts() {
-    wp_enqueue_script('apisearchplugin-ajax', plugin_dir_url(__FILE__) . 'apisearchplugin.js', array('jquery'), null, true);
+    wp_enqueue_script('apisearchplugin-ajax', plugin_dir_url(__FILE__) . 'js/apisearchplugin.js', array('jquery'), null, true);
     wp_localize_script('apisearchplugin-ajax', 'apisearchplugin_ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('apisearchplugin_nonce'),
@@ -168,7 +168,7 @@ function apisearchplugin_enqueue_scripts() {
     ));
 
     // Enqueue front-end styles
-    wp_enqueue_style('apisearchplugin-styles', plugin_dir_url(__FILE__) . 'front_apisearchplugin.css');
+    wp_enqueue_style('apisearchplugin-styles', plugin_dir_url(__FILE__) . 'css/front_apisearchplugin.css');
 }
 add_action('wp_enqueue_scripts', 'apisearchplugin_enqueue_scripts');
 add_action('admin_enqueue_scripts', 'api_searchplugin_add_styles');
@@ -218,7 +218,7 @@ function apisearchplugin_ajax_search_residences() {
     ob_start();
 
     // Inclure le template avec les résidences filtrées
-    include plugin_dir_path(__FILE__) . 'templates/ajax_search_residences_template.php';
+    include plugin_dir_path(__FILE__) . 'views/ajax_search_residences.php';
 
     $output = ob_get_clean();
 
@@ -251,7 +251,7 @@ add_action('wp_ajax_nopriv_residence_details', 'apisearchplugin_ajax_residence_d
 
 
 function api_searchplugin_add_styles() {
-    wp_enqueue_style('apisearchplugin-styles', plugin_dir_url(__FILE__) . 'front_apisearchplugin.css');
+    wp_enqueue_style('apisearchplugin-styles', plugin_dir_url(__FILE__) . 'css/front_apisearchplugin.css');
 }
 
 add_action('wp_enqueue_scripts', 'api_searchplugin_add_styles');

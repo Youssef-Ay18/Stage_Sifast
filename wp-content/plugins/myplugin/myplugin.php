@@ -75,29 +75,29 @@ function myplugin_delete_person($id) {
 
 // Include HTML Pages
 function myplugin_add_person_page() {
-    include plugin_dir_path(__FILE__) . 'admin/add_person_page.php';
+    include plugin_dir_path(__FILE__) . 'view/admin/add_person_page.php';
 }
 
 function myplugin_view_data_page() {
-    include plugin_dir_path(__FILE__) . 'admin/view_data_page.php';
+    include plugin_dir_path(__FILE__) . 'view/admin/view_data_page.php';
 }
 
 // Shortcode
 function myplugin_form_shortcode($atts) {
     ob_start();
-    include plugin_dir_path(__FILE__) . 'shortcode/form_shortcode.php';
+    include plugin_dir_path(__FILE__) . 'view/shortcode/form_shortcode.php';
     return ob_get_clean();
 }
 add_shortcode('myplugin_form', 'myplugin_form_shortcode');
 
 
 function myplugin_enqueue_admin_styles() {
-    wp_enqueue_style('myplugin-admin-style', plugin_dir_url(__FILE__) . 'myplugin-style.css');
+    wp_enqueue_style('myplugin-admin-style', plugin_dir_url(__FILE__) . 'css/myplugin-style.css');
 }
 add_action('admin_enqueue_scripts', 'myplugin_enqueue_admin_styles');
 
 function myplugin_enqueue_frontend_styles() {
-    wp_enqueue_style('myplugin-frontend-style', plugin_dir_url(__FILE__) . 'myplugin-style.css');
+    wp_enqueue_style('myplugin-frontend-style', plugin_dir_url(__FILE__) . 'css/myplugin-style.css');
 }
 add_action('wp_enqueue_scripts', 'myplugin_enqueue_frontend_styles');
 ?>
