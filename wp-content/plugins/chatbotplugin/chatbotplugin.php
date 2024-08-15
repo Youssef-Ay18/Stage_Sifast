@@ -189,7 +189,7 @@ function chatbot_plugin_fetch_details() {
     );
 
     ob_start();
-    include plugin_dir_path(__FILE__) . 'views/residence_details_template.php';
+    include plugin_dir_path(__FILE__) . 'views/residence_details.php';
     $html = ob_get_clean();
 
     wp_send_json_success(array('html' => $html));
