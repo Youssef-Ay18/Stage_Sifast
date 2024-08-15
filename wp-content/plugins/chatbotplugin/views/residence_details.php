@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détails de la Résidence</title>
-    <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__) . 'css/chatbot-details.css'; ?>">
-</head>
+    <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__) . '../css/chatbot-details.css'; ?>">
+    </head>
 <body>
     <div class="apisearchplugin-details">
         <h2><?php echo esc_html($details['title']); ?></h2>
