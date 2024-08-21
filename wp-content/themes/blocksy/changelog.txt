@@ -1,3 +1,26 @@
+2.0.62: 2024-08-15
+- New: Header builder - option to add backdrop blur (frosted glass) effect
+- Improvement: Add anchor links to product tabs type 4
+- Improvement: Better compatibility with Formidable Forms registration and theme avatars
+- Improvement: Ensure WPRocket never defers execution of Blocksy's frontend localization script
+- Improvement: Improved check for customizer preview in AJAX add to cart product logic
+- Improvement: Make sure `[product_page]` shortcode loads the single product assets correctly
+- Improvement: WooCommerce Single product - Ensure `woocommerce_share` action is called in the correct place
+- Improvement: WooCommerce filter canvas button and sorting option on the same line on mobile
+
+2.0.61: 2024-08-08
+- Improvement: Better handle Disqus comments with "Contained" module placement
+- Improvement: Customizer options - better handle options with long translated labels
+- Improvement: Customizer range/slider option - make sure invalid values are handled correctly
+- Improvement: Product archive columns number option - better handle revert state
+
+2.0.60: 2024-08-01
+- Improvement: Author page hero section - color options for the social icons
+- Improvement: Better `schema.org` markup for post comments
+- Improvement: Cart page quantity update does not work with keyboard input if browser is in responsive view
+- Improvement: Share box - add possibility to share on Threads platform
+- Improvement: Single product image zoom effect does not zoom to the appropriate place on first zoom on touch devices
+
 2.0.59: 2024-07-25
 - Improvement: Better apply single product modifications to handle pages made with `[product_page]` shortcode
 - Improvement: Bring "custom class" feature to footer button element

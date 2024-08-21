@@ -53,22 +53,26 @@ function fetch_residences_by_query($query, $option) {
         if ($option === 'name') {
             if (stripos($residence['title'], $query) !== false) {
                 $results[] = array(
+                    'id' => $residence['id'],
                     'title' => $residence['title'],
                     'address' => $residence['address'],
-                    'price' => isset($residence['preview']['rent_amount_from']) ? $residence['preview']['rent_amount_from'] : 'N/A',
+                    'price' => $residence['preview']['rent_amount_from'],
                     'picture' => isset($residence['pictures'][0]['url']) ? $residence['pictures'][0]['url'] : '',
-                    'url' => $residence['url']
-                );
+                    'city' => $residence['city']
+                );      
+                
             }
         } elseif ($option === 'city') {
             if (stripos($residence['city'], $query) !== false) {
                 $results[] = array(
+                    'id' => $residence['id'],
                     'title' => $residence['title'],
                     'address' => $residence['address'],
-                    'price' => isset($residence['preview']['rent_amount_from']) ? $residence['preview']['rent_amount_from'] : 'N/A',
+                    'price' => $residence['preview']['rent_amount_from'],
                     'picture' => isset($residence['pictures'][0]['url']) ? $residence['pictures'][0]['url'] : '',
-                    'url' => $residence['url']
+                    'city' => $residence['city']
                 );
+            
             }
         }
     }

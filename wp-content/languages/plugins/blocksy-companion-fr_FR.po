@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Blocksy Companion - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-21 13:45:04+0000\n"
+"PO-Revision-Date: 2024-08-14 09:47:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,100 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Blocksy Companion - Stable (latest release)\n"
+
+#: framework/helpers/exts-configs.php:378
+msgid "Show a dynamic confirmation popup with product recommendations whenever items are added to the cart."
+msgstr "Afficher une fenêtre surgissante de confirmation avec des recommandations de produits lorsque des articles sont ajoutés au panier."
+
+#: framework/helpers/exts-configs.php:377
+msgid "Added to Cart Popup"
+msgstr "Ajouté à la fenêtre surgissante du panier"
+
+#: framework/helpers/exts-configs.php:370
+msgid "Show the remaining stock of a product to create a sense of urgency and encourage your visitors to make a purchase."
+msgstr "Afficher le stock restant d’un produit pour créer un sentiment d’urgence et encourager vos visiteurs et visiteuses à acheter."
+
+#: framework/helpers/exts-configs.php:369
+msgid "Stock Scarcity"
+msgstr "Rareté du stock"
+
+#: framework/extensions/trending/customizer.php:860
+msgid "Image Border Radius"
+msgstr "Rayon de la bordure de l’image"
+
+#: framework/extensions/trending/customizer.php:835
+msgid "Taxonomy Font Color"
+msgstr "Taille de la police de taxonomie"
+
+#: framework/extensions/trending/customizer.php:780
+msgid "Taxonomies Button Color"
+msgstr "Couleur du bouton des taxonomies"
+
+#: framework/extensions/trending/customizer.php:708
+#: framework/extensions/trending/customizer.php:748
+msgid "Taxonomies Font Color"
+msgstr "Couleur de police des taxonomies"
+
+#: framework/extensions/trending/customizer.php:693
+#: framework/extensions/trending/customizer.php:825
+msgid "Taxonomy Font"
+msgstr "Police de la taxonomie"
+
+#: framework/extensions/trending/customizer.php:496
+msgid "Vertical Alignment"
+msgstr "Alignement vertical"
+
+#: framework/extensions/trending/customizer.php:465
+msgid "Image Width"
+msgstr "Largeur de l’image"
+
+#: framework/extensions/trending/customizer.php:450
+msgid "Underline"
+msgstr "Souligner"
+
+#: framework/extensions/trending/customizer.php:449
+msgid "Button"
+msgstr "Bouton"
+
+#: framework/extensions/trending/customizer.php:441
+msgid "Taxonomy Style"
+msgstr "Style de taxonomie"
+
+#: framework/extensions/trending/customizer.php:423
+msgid "Show Taxonomy"
+msgstr "Afficher la taxonomie"
+
+#: framework/extensions/trending/customizer.php:409
+msgid "Show Product Price"
+msgstr "Afficher le prix du produit"
+
+#: framework/extensions/trending/customizer.php:309
+msgid "Best Sellers"
+msgstr "Les meilleures ventes"
+
+#: framework/extensions/trending/customizer.php:308
+msgid "Top Rated"
+msgstr "Mieux notés"
+
+#: framework/extensions/trending/customizer.php:307
+msgid "On Sale"
+msgstr "En promo"
+
+#: framework/extensions/trending/customizer.php:303
+msgid "Products Status"
+msgstr "État des produits"
+
+#: framework/extensions/trending/customizer.php:142
+msgid "Taxonomy Source"
+msgstr "Source de la taxonomie"
+
+#: framework/extensions/trending/customizer.php:121
+msgid "Tag"
+msgstr "Étiquette"
+
+#: framework/features/blocks/share-box/options.php:91
+msgid "Line"
+msgstr "Ligne"
 
 #: framework/views/theme-mismatch.php:45 static/bundle/dashboard-no-theme.js:6
 #: static/bundle/notifications.js:6 static/js/dashboard/VersionMismatch.js:30
@@ -218,21 +312,21 @@ msgstr "Lien vers la page de l’auteur/autrice"
 msgid "Link to post"
 msgstr "Lien vers la publication"
 
-#: framework/features/blocks/dynamic-data/options.php:142
+#: framework/features/blocks/dynamic-data/options.php:141
 msgid "Last Name"
 msgstr "Nom de Famille"
 
-#: framework/features/blocks/dynamic-data/options.php:141
+#: framework/features/blocks/dynamic-data/options.php:140
 msgid "First Name"
 msgstr "Prénom"
 
-#: framework/features/blocks/dynamic-data/options.php:140
+#: framework/features/blocks/dynamic-data/options.php:138
 msgid "Display Name"
 msgstr "Nom affiché"
 
 #: framework/features/blocks/dynamic-data/options.php:139
-msgid "Nicename"
-msgstr "Identifiant normalisé"
+msgid "Nickname"
+msgstr "Pseudonyme"
 
 #: framework/features/blocks/dynamic-data/options.php:132
 msgid "Author Field"
@@ -293,23 +387,23 @@ msgstr "Type de date"
 msgid "Length"
 msgstr "Longueur"
 
-#: framework/features/blocks/contact-info/options.php:563
+#: framework/features/blocks/contact-info/options.php:597
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: framework/features/blocks/contact-info/options.php:562
+#: framework/features/blocks/contact-info/options.php:596
 msgid "Vertical"
 msgstr "Vertical"
 
-#: framework/features/blocks/contact-info/options.php:556
+#: framework/features/blocks/contact-info/options.php:590
 msgid "Items Direction"
 msgstr "Direction des éléments"
 
-#: framework/features/blocks/contact-info/options.php:499
+#: framework/features/blocks/contact-info/options.php:533
 msgid "Link Icons"
 msgstr "Icônes de lien"
 
-#: framework/features/blocks/contact-info/options.php:24
+#: framework/features/blocks/contact-info/options.php:44
 msgid "Contact Information"
 msgstr "Information de contact"
 
@@ -327,7 +421,7 @@ msgid "Blocksy"
 msgstr "Blocksy"
 
 #: framework/features/blocks/about-me/options.php:178
-#: framework/features/blocks/contact-info/options.php:514
+#: framework/features/blocks/contact-info/options.php:548
 msgid "Items Spacing"
 msgstr "Espacement des éléments"
 
@@ -375,8 +469,8 @@ msgstr "Élément d’archive WooCommerce avec ID de taxonomie"
 msgid "Archive Item with Taxonomy ID"
 msgstr "Élément d’archive avec ID de taxonomie"
 
-#: framework/features/demo-install/content-installer.php:172
-#: framework/features/demo-install/content-installer.php:178
+#: framework/features/demo-install/content-installer.php:189
+#: framework/features/demo-install/content-installer.php:195
 msgid "No demo data found."
 msgstr "Aucunes données de démo trouvées."
 
@@ -419,12 +513,12 @@ msgstr "Désolé, vous n’avez pas les droits nécessaire pour installer des op
 msgid "Sorry, you don't have permission to finish the installation."
 msgstr "Désolé, vous n’avez pas les droits nécessaires pour terminer l’installation."
 
-#: framework/features/demo-install/content-installer.php:329
-#: framework/features/demo-install/content-installer.php:334
+#: framework/features/demo-install/content-installer.php:346
+#: framework/features/demo-install/content-installer.php:351
 msgid "No pages to assign."
 msgstr "Aucune page à assigner."
 
-#: framework/features/demo-install/content-installer.php:52
+#: framework/features/demo-install/content-installer.php:69
 msgid "Sorry, you don't have permission to install content."
 msgstr "Désolé, vous n’avez pas les droits nécessaires pour installer du contenu."
 
@@ -437,8 +531,8 @@ msgid "Sorry, you don't have permission to install child themes."
 msgstr "Désolé, vous n’avez pas les droits nécessaires pour installer des thèmes enfants."
 
 #: framework/features/demo-install.php:115
-#: framework/features/demo-install/content-installer.php:142
-#: framework/features/demo-install/content-installer.php:147
+#: framework/features/demo-install/content-installer.php:159
+#: framework/features/demo-install/content-installer.php:164
 #: framework/features/demo-install/demo-register.php:9
 msgid "No demo name provided."
 msgstr "Aucun nom de démo fourni."
@@ -480,288 +574,288 @@ msgstr "Information additionnelle sur l’utilisateur/utilisatrice"
 msgid "Action Link"
 msgstr "Lien d’action"
 
-#: framework/helpers/exts.php:278
+#: framework/helpers/exts-configs.php:330
 msgid "Free Shipping Bar"
 msgstr "Barre de livraison gratuite"
 
-#: framework/extensions/trending/customizer.php:153
+#: framework/extensions/trending/customizer.php:216
 msgid "Module Title Icon Source"
 msgstr "Origine de l’icône du titre du module"
 
-#: framework/helpers/exts.php:271
+#: framework/helpers/exts-configs.php:323
 msgid "Enhance your WooCommerce reviews with rich content, images and a thumbs up system that help your shoppers find the perfect product."
 msgstr "Améliorez vos avis WooCommerce avec du contenu riche, des images et un système de pouce pour aider vos clients à trouver le produit idéal."
 
-#: framework/helpers/exts.php:270
+#: framework/helpers/exts-configs.php:322
 msgid "Advanced Reviews"
 msgstr "Avis avancés"
 
-#: framework/helpers/exts.php:262
+#: framework/helpers/exts-configs.php:314
 msgid "Create a customized order “Thank You” page for your customers, giving them a personalized experience."
 msgstr "Créez une page de remerciement de commande personnalisée pour vos clients et offrez-leur une expérience personnalisée."
 
-#: framework/helpers/exts.php:261
+#: framework/helpers/exts-configs.php:313
 msgid "Custom Thank You Pages"
 msgstr "Pages de remerciement personnalisées"
 
-#: framework/helpers/exts.php:253
+#: framework/helpers/exts-configs.php:305
 msgid "Show a size chart guide so that your visitors can pick the right size for them when ordering a product."
 msgstr "Affichez un tableau des tailles afin que vos visiteurs puissent choisir la taille qui leur convient lorsqu’ils commandent un produit."
 
-#: framework/helpers/exts.php:252
+#: framework/helpers/exts-configs.php:304
 msgid "Size Guide"
 msgstr "Guide des tailles"
 
-#: framework/helpers/exts.php:244
+#: framework/helpers/exts-configs.php:296
 msgid "Present additional information about your products by adding new custom tabs to the product information section."
 msgstr "Présentez des informations supplémentaires sur vos produits en ajoutant de nouveaux onglets personnalisés à la section des informations sur les produits."
 
-#: framework/helpers/exts.php:243
+#: framework/helpers/exts-configs.php:295
 msgid "Custom Tabs"
 msgstr "Onglets personnalisés"
 
-#: framework/helpers/exts.php:310
+#: framework/helpers/exts-configs.php:362
 msgid "Better management for affiliate products with a few simple options that strengthen the external integration with these."
 msgstr "Meilleure gestion des produits d’affiliation grâce à quelques options simples qui renforcent l’intégration externe avec ces produits."
 
-#: framework/helpers/exts.php:309
+#: framework/helpers/exts-configs.php:361
 msgid "Affiliate Product Links"
 msgstr "Liens d’affiliation produit"
 
-#: framework/helpers/exts.php:235
+#: framework/helpers/exts-configs.php:287
 msgid "Categorise products by brands and show their logo in archive or single page so users could discover more about their makers."
 msgstr "Catégoriser les produits par marque et afficher leur logo dans les archives ou sur une page unique afin que les utilisateurs/utilisatrices puissent en savoir plus sur les fabricants."
 
 #: framework/features/conditions/rules/woo.php:42
-#: framework/helpers/exts.php:234
+#: framework/helpers/exts-configs.php:286
 msgid "Product Brands"
 msgstr "Marques de produits"
 
-#: framework/helpers/exts.php:227
+#: framework/helpers/exts-configs.php:279
 msgid "Catch the attention of your clients by showcasing your product variations as colour, image or button swatches."
 msgstr "Attirez l’attention de vos clients en présentant les variations de vos produits sous forme d’échantillons de couleurs, d’images ou de boutons."
 
-#: framework/helpers/exts.php:226
+#: framework/helpers/exts-configs.php:278
 msgid "Variation Swatches"
 msgstr "Nuancier de variation"
 
-#: framework/helpers/exts.php:279
+#: framework/helpers/exts-configs.php:331
 msgid "Add a visual cue that tells your visitors how much the cart total must be to be able to benefit of free shipping."
 msgstr "Ajoutez un repère visuel qui indique à vos visiteurs quel doit être le montant du panier pour pouvoir bénéficier de la livraison gratuite."
 
-#: framework/helpers/exts.php:303
+#: framework/helpers/exts-configs.php:355
 msgid "Advanced searching for products by their SKU classification can be useful in cases of vast product catalogues."
 msgstr "La recherche avancée de produits par leur classification UGS peut s’avérer utile dans le cas de vastes catalogues de produits."
 
-#: framework/helpers/exts.php:302
+#: framework/helpers/exts-configs.php:354
 msgid "Search by SKU"
 msgstr "Rechercher par UGS"
 
-#: framework/helpers/exts.php:287
+#: framework/helpers/exts-configs.php:339
 msgid "Replace the standard product gallery with additional layouts which can showcase the photos as a grid or even a slider."
 msgstr "Remplacez la galerie de produits standard par des mises en page supplémentaires qui peuvent présenter les photos sous la forme d’une grille ou même d’un diaporama."
 
-#: framework/helpers/exts.php:286
+#: framework/helpers/exts-configs.php:338
 msgid "Advanced Gallery"
 msgstr "Galerie avancée"
 
-#: framework/helpers/exts.php:295
+#: framework/helpers/exts-configs.php:347
 msgid "Enable social sharing abilities for products available on the site, letting even more users discover your great shop selection."
 msgstr "Activez les fonctions de partage social pour les produits disponibles sur le site, afin de permettre à un plus grand nombre d’internautes de découvrir votre vaste sélection de produits."
 
-#: framework/helpers/exts.php:294
+#: framework/helpers/exts-configs.php:346
 msgid "Product Share Box"
 msgstr "Boîte de partage de produit"
 
-#: framework/helpers/exts.php:219
+#: framework/helpers/exts-configs.php:271
 msgid "Compare products with a clear and concise table system that gives your users a way to make a quick decision."
 msgstr "Comparez les produits à l’aide d’un système de tableaux clair et concis qui permet aux internautes de prendre rapidement une décision."
 
-#: framework/helpers/exts.php:218
+#: framework/helpers/exts-configs.php:270
 msgid "Compare View"
 msgstr "Vue comparative"
 
-#: framework/helpers/exts.php:211
+#: framework/helpers/exts-configs.php:263
 msgid "A set of features that lets you create easily your dream products wishlists and share them with friends and family."
 msgstr "Un ensemble de fonctionnalités qui vous permet de créer facilement vos listes de produits de rêve et de les partager avec vos amis/amies et votre famille."
 
-#: framework/helpers/exts.php:203
+#: framework/helpers/exts-configs.php:255
 msgid "Drill down the product list with new filtering widgets, an off canvas area for them and showing the active filters on the page."
 msgstr "Faites défiler la liste des produits avec les nouveaux widgets de filtrage, d’une zone hors-champ pour ces widgets et de l’affichage des filtres actifs sur la page."
 
-#: framework/helpers/exts.php:202
+#: framework/helpers/exts-configs.php:254
 msgid "Filters"
 msgstr "Filtres"
 
-#: framework/helpers/exts.php:195
+#: framework/helpers/exts-configs.php:247
 msgid "Preview the available products and let your users make quick and informative decisions about their purchase."
 msgstr "Prévisualisez les produits disponibles et permettez à vos utilisateurs de prendre des décisions d’achat rapides et éclairées."
 
-#: framework/helpers/exts.php:187
+#: framework/helpers/exts-configs.php:239
 msgid "Adds the “add to cart” actions to the product page as a floating bar if the product summary has disappeared from view."
 msgstr "Ajoute les actions « ajouter au panier » à la page du produit sous la forme d’une barre flottante si le résumé du produit a disparu de la vue."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:176
+#: framework/helpers/exts-configs.php:228
 msgid "Make the shopping experience better for your visitors! Add features such as Product Quick View, Wishlist functionality and a Floating Add to Cart button. Customize the single product gallery/slider and the layout."
 msgstr "Améliorer l’expérience d’achat de vos visiteurs ! Ajoutez des fonctionnalités telles que la vue rapide des produits, la fonctionnalité de liste de souhaits et un bouton flottant d’ajout au panier. Personnaliser la galerie/diaporama de produit unique et la mise en page."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:175
+#: framework/helpers/exts-configs.php:227
 msgctxt "Extension Brand Name"
 msgid "Shop Extra"
 msgstr "Shop Extra"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:163
+#: framework/helpers/exts-configs.php:215
 msgid "Replace Blocksy's branding with your own. Easily hide licensing info and other sections of the theme and companion plugin from your clients and make your final product look more professional."
 msgstr "Remplacez la marque Blocksy par la vôtre. Masquez facilement les informations de licence et d’autres sections du thème et de l’extension Blocksy Companion à vos clients/clientes et donnez à votre produit final un aspect plus professionnel."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:162
+#: framework/helpers/exts-configs.php:214
 msgctxt "Extension Brand Name"
 msgid "White Label"
 msgstr "White Label"
 
-#: framework/helpers/exts.php:147
+#: framework/helpers/exts-configs.php:199
 msgid "Create New Sidebar"
 msgstr "Créer une nouvelle colonne latérale"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:143
+#: framework/helpers/exts-configs.php:195
 msgid "Create unlimited personalized sets of widget areas and display them on any page or post using our conditional logic functionality."
 msgstr "Créez un nombre illimité de zones de widgets personnalisées et affichez-les sur n’importe quelle page ou publication à l’aide de notre fonctionnalité de logique conditionnelle."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:142
+#: framework/helpers/exts-configs.php:194
 msgctxt "Extension Brand Name"
 msgid "Multiple Sidebars"
 msgstr "Colonnes latérales multiples"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:128
+#: framework/helpers/exts-configs.php:180
 msgid "Easily turn your websites into mobile first experiences. You can easily add the most important actions at the bottom of the screen for easy access."
 msgstr "Transformez facilement vos sites web en expérience mobile-first. Vous pouvez facilement ajouter les actions les plus importantes au bas de l’écran pour un accès facile."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:127
+#: framework/helpers/exts-configs.php:179
 msgctxt "Extension Brand Name"
 msgid "Shortcuts Bar"
 msgstr "Barre de raccourcis"
 
-#: framework/helpers/exts.php:112
+#: framework/helpers/exts-configs.php:164
 msgid "Additional customisation options for your taxonomies such as hero backgrounds and custom colour labels."
 msgstr "Options de personnalisation supplémentaires pour vos taxonomies, telles que des arrière-plans de bannières d’accroche et des libellés de couleurs personnalisées."
 
-#: framework/helpers/exts.php:111
+#: framework/helpers/exts-configs.php:163
 msgid "Taxonomy Customisations"
 msgstr "Personnalisations des taxonomies"
 
-#: framework/helpers/exts.php:105
+#: framework/helpers/exts-configs.php:157
 msgid "Let your guests easily filter the posts by their category or tags taxonomy terms, instantly drilling down the listings."
 msgstr "Permettez à vos internautes de filtrer facilement les publications en fonction de leur catégorie ou des termes de la taxonomie des étiquettes, en réduisant instantanément la liste d’éléments."
 
-#: framework/helpers/exts.php:104
+#: framework/helpers/exts-configs.php:156
 msgid "Posts Filter"
 msgstr "Filtre des publications"
 
-#: framework/helpers/exts.php:98
+#: framework/helpers/exts-configs.php:150
 msgid "Integrates custom fields solutions in the meta layers of a post and presents additional information."
 msgstr "Intègre les solutions de champs personnalisés dans les calques de métadonnées d’une publication et présente des informations supplémentaires."
 
-#: framework/helpers/exts.php:97 static/bundle/blocks/blocks.js:7
+#: framework/helpers/exts-configs.php:149 static/bundle/blocks/blocks.js:7
 #: static/js/editor/blocks/dynamic-data/index.js:16
 #: static/js/editor/blocks/dynamic-data/index.js:100
 msgid "Dynamic Data"
 msgstr "Données dynamiques"
 
-#: framework/helpers/exts.php:91
+#: framework/helpers/exts-configs.php:143
 msgid "Display the approximate reading time of an article, so that visitors know what to expect when starting to read the content."
 msgstr "Affichez le temps de lecture approximatif d’un article, afin que les internautes sachent à quoi s’attendre lorsqu’ils commencent à lire le contenu."
 
-#: framework/helpers/exts.php:90
+#: framework/helpers/exts-configs.php:142
 msgid "Read Time"
 msgstr "Temps de lecture"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:85
+#: framework/helpers/exts-configs.php:137
 msgid "Enables support for Custom Fields inside archive cards and single page post title, adds a reading progress bar for your posts and lets you set featured images and colors for your categories archives."
 msgstr "Active le support des champs personnalisés dans les cartes d’archives et les titres des publications d’une seule page, ajoute une barre de progression de la lecture pour vos publications et vous permet de définir des images mises en avant et des couleurs pour les archives de vos catégories."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:84
+#: framework/helpers/exts-configs.php:136
 msgctxt "Extension Brand Name"
 msgid "Post Types Extra"
 msgstr "Post Types Extra"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:72
+#: framework/helpers/exts-configs.php:124
 msgid "Create beautiful personalised menus that set your website apart from the others. Add icons and badges to your entries and even add Content Blocks inside your dropdowns."
 msgstr "Créez de magnifiques menus personnalisés qui distinguent votre site web des autres. Ajoutez des icônes et des badges à vos entrées et même des blocs de contenu dans vos menus déroulants."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:71
+#: framework/helpers/exts-configs.php:123
 msgctxt "Extension Brand Name"
 msgid "Advanced Menu"
 msgstr "Advanced Menu"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:57
+#: framework/helpers/exts-configs.php:109
 msgid "Serve your chosen Google Fonts from your own web server. This will increase the loading speed and makes sure your website complies with the privacy regulations."
 msgstr "Servez les polices Google que vous avez choisies depuis votre propre serveur web. Vous augmentez ainsi la vitesse de chargement et vous vous assurez que votre site soit conforme aux réglementations en matière de confidentialité."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:56
+#: framework/helpers/exts-configs.php:108
 msgctxt "Extension Brand Name"
 msgid "Local Google Fonts"
 msgstr "Local Google Fonts"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:45
+#: framework/helpers/exts-configs.php:97
 msgid "Upload an unlimited number of custom fonts or variable fonts and use them throughout Blocksy and your favorite page builder."
 msgstr "Téléversez un nombre illimité de polices personnalisées ou de polices variables et utilisez-les dans Blocksy et dans votre constructeur de pages préféré."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:44
+#: framework/helpers/exts-configs.php:96
 msgctxt "Extension Brand Name"
 msgid "Custom Fonts"
 msgstr "Polices personnalisées"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:32
+#: framework/helpers/exts-configs.php:84
 msgid "Add a dark colour scheme and switch to your website, which will make it pleasant to look at in low light environments."
 msgstr "Ajoutez une palette de couleurs sombres et un commutateur à votre site web, ce qui le rendra plus agréable à regarder dans les environnements peu éclairés."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:31
+#: framework/helpers/exts-configs.php:83
 msgctxt "Extension Brand Name"
 msgid "Color Mode Switch"
 msgstr "Color Mode Switch"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:19
+#: framework/helpers/exts-configs.php:71
 msgid "Inject custom code snippets throughout your website. The extension works globally or on a per post/page basis."
 msgstr "Injectez des extraits de code personnalisés sur l’ensemble de votre site. L’extension fonctionne globalement ou par publication/page."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:18
+#: framework/helpers/exts-configs.php:70
 msgctxt "Extension Brand Name"
 msgid "Custom Code Snippets"
 msgstr "Custom Code Snippets"
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:8
+#: framework/helpers/exts-configs.php:60
 msgid "Connect your Adobe Fonts project and use the selected fonts throughout Blocksy and your favorite page builder."
 msgstr "Connectez votre projet Adobe Fonts et utilisez les polices sélectionnées dans Blocksy et votre constructeur de pages préféré."
 
 #. translators: This is a brand name. Preferably to not be translated
-#: framework/helpers/exts.php:7
+#: framework/helpers/exts-configs.php:59
 msgctxt "Extension Brand Name"
 msgid "Adobe Fonts"
 msgstr "Adobe Fonts"
 
 #: framework/features/header/items/account/views/login.php:516
-#: framework/helpers/exts.php:210
+#: framework/helpers/exts-configs.php:262
 msgid "Wishlist"
 msgstr "Liste de souhaits"
 
@@ -962,23 +1056,23 @@ msgstr "Saisissez votre adresse e-mail ci-dessous et abonnez-vous à notre newsl
 msgid "X (Twitter)"
 msgstr "X (Twitter)"
 
-#: framework/extensions/trending/customizer.php:500
+#: framework/extensions/trending/customizer.php:871
 msgid "Arrows Color"
 msgstr "Couleur des flèches"
 
-#: framework/extensions/trending/customizer.php:469
+#: framework/extensions/trending/customizer.php:656
 msgid "Posts Title Font Color"
 msgstr "Couleur de la police du titre des publications"
 
-#: framework/extensions/trending/customizer.php:460
+#: framework/extensions/trending/customizer.php:647
 msgid "Posts Title Font"
 msgstr "Police de titre des publications"
 
-#: framework/extensions/trending/customizer.php:409
+#: framework/extensions/trending/customizer.php:596
 msgid "Module Title Color"
 msgstr "Couleur du titre du module"
 
-#: framework/extensions/trending/customizer.php:401
+#: framework/extensions/trending/customizer.php:588
 msgid "Module Title Font"
 msgstr "Police de titre du module"
 
@@ -1088,7 +1182,7 @@ msgstr "Votre compte a bien été créé et un mot de passe a été envoyé à v
 msgid "Your account was created successfully. Your login details have been sent to your email address. Please visit the %1$slogin page%2$s."
 msgstr "Votre compte a bien été créé. Vos informations de connexion ont été envoyé sur votre adresse e-mail. Veuillez vous rendre sur la %1$spage de connexion%2$s."
 
-#: framework/dashboard.php:462
+#: framework/dashboard.php:466
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Vous n’avez pas les droits nécessaires pour accéder à cette page."
 
@@ -1157,13 +1251,13 @@ msgstr "Prénom"
 msgid "Privacy Policy Page"
 msgstr "Page de la politique de confidentialité"
 
-#: framework/features/blocks/contact-info/options.php:83
-#: framework/features/blocks/contact-info/options.php:146
-#: framework/features/blocks/contact-info/options.php:207
-#: framework/features/blocks/contact-info/options.php:268
-#: framework/features/blocks/contact-info/options.php:329
-#: framework/features/blocks/contact-info/options.php:390
-#: framework/features/blocks/contact-info/options.php:451
+#: framework/features/blocks/contact-info/options.php:103
+#: framework/features/blocks/contact-info/options.php:168
+#: framework/features/blocks/contact-info/options.php:231
+#: framework/features/blocks/contact-info/options.php:294
+#: framework/features/blocks/contact-info/options.php:357
+#: framework/features/blocks/contact-info/options.php:420
+#: framework/features/blocks/contact-info/options.php:483
 #: framework/features/header/items/account/options.php:375
 #: framework/features/header/items/account/options.php:756
 msgid "Icon Source"
@@ -1171,7 +1265,7 @@ msgstr "Origine de l’icône"
 
 #. translators: This is a brand name. Preferably to not be translated
 #: framework/extensions/trending/config.php:5
-#: framework/extensions/trending/customizer.php:97
+#: framework/extensions/trending/customizer.php:160
 msgctxt "Extension Brand Name"
 msgid "Trending Posts"
 msgstr "Articles tendance"
@@ -1195,7 +1289,7 @@ msgctxt "Extension Brand Name"
 msgid "Cookies Consent"
 msgstr "Consentement aux cookies"
 
-#: framework/extensions/trending/customizer.php:307
+#: framework/extensions/trending/customizer.php:477
 #: framework/features/blocks/about-me/options.php:81
 msgid "Image Size"
 msgstr "Taille de l’image"
@@ -1204,8 +1298,8 @@ msgstr "Taille de l’image"
 #: static/bundle/blocks/blocks.js:7
 #: static/js/editor/blocks/query/edit/PostsInspectorControls.js:46
 #: static/js/editor/blocks/query/edit/PostsInspectorControls.js:73
-#: static/js/editor/blocks/tax-query/edit/TermsInspectorControls.js:42
-#: static/js/editor/blocks/tax-query/edit/TermsInspectorControls.js:69
+#: static/js/editor/blocks/tax-query/edit/TermsInspectorControls.js:41
+#: static/js/editor/blocks/tax-query/edit/TermsInspectorControls.js:68
 msgid "Offset"
 msgstr "Décalage"
 
@@ -1219,6 +1313,7 @@ msgstr "Effet"
 #: framework/extensions/newsletter-subscribe/providers/demo.php:40
 #: framework/extensions/newsletter-subscribe/providers/mailerlite-classic.php:104
 #: framework/extensions/newsletter-subscribe/providers/mailerlite-new.php:123
+#: framework/extensions/newsletter-subscribe/providers/mailpoet.php:93
 msgid "Thank you for subscribing to our newsletter!"
 msgstr "Merci de vous être abonné à notre lettre d’information."
 
@@ -1312,7 +1407,7 @@ msgstr "Mot de passe oublié"
 msgid "<strong>Error</strong>: %s"
 msgstr "<strong>Erreur</strong> : %s"
 
-#: framework/extensions/product-reviews/metabox.php:126
+#: framework/extensions/product-reviews/metabox.php:127
 msgid "Sponsored Attribute"
 msgstr "Attribut sponsorisé"
 
@@ -1362,11 +1457,11 @@ msgstr "Couleur du titre"
 msgid "You can add here some arbitrary HTML code."
 msgstr "Vous pouvez ajouter ici du code HTML."
 
-#: framework/extensions/trending/customizer.php:124
+#: framework/extensions/trending/customizer.php:187
 msgid "Module Title Tag"
 msgstr "Balise de titre de module"
 
-#: framework/extensions/product-reviews/metabox.php:170
+#: framework/extensions/product-reviews/metabox.php:172
 msgid "Short Description"
 msgstr "Description courte"
 
@@ -1463,7 +1558,7 @@ msgid "Review Summary"
 msgstr "Résumé de l’avis"
 
 #: framework/features/blocks/about-me/options.php:163
-#: framework/features/blocks/contact-info/options.php:493
+#: framework/features/blocks/contact-info/options.php:527
 #: framework/features/blocks/share-box/options.php:104
 #: framework/features/blocks/socials/options.php:69
 msgid "Set links to nofollow"
@@ -1477,7 +1572,7 @@ msgstr "Bouton « Lire la suite »"
 msgid "Enable the OpenGraph rich meta data features for your website."
 msgstr "Activer les fonctionnalités de métadonnées enrichies d’OpenGraph pour votre site web."
 
-#: framework/features/google-analytics.php:109
+#: framework/features/google-analytics.php:74
 msgid "Link your Google Analytics 4 tracking ID. More info and instructions can be found %shere%s."
 msgstr "Liez votre ID de suivi Google Analytics 4. Plus d’informations et d’instructions %sici%s."
 
@@ -1556,7 +1651,7 @@ msgstr "bbPress"
 msgid "I accept the %sPrivacy Policy%s*"
 msgstr "J’accepte  la %spolitique de confidentialité%s*"
 
-#: framework/extensions/trending/customizer.php:116
+#: framework/extensions/trending/customizer.php:179
 msgid "Module Title"
 msgstr "Titre du module"
 
@@ -1577,27 +1672,27 @@ msgstr "Option de la modale"
 msgid "Open links in new tab"
 msgstr "Ouvrir les liens dans un nouvel onglet"
 
-#: framework/extensions/trending/customizer.php:386
+#: framework/extensions/trending/customizer.php:573
 msgid "Add one or more conditions to display the trending block."
 msgstr "Ajouter une condition ou plus d’affichage du bloc tendances."
 
-#: framework/extensions/trending/customizer.php:385
+#: framework/extensions/trending/customizer.php:572
 msgid "Trending Block Display Conditions"
 msgstr "Conditions d’affichage du bloc de tendances"
 
-#: framework/extensions/trending/customizer.php:368
+#: framework/extensions/trending/customizer.php:555
 msgid "After Header"
 msgstr "Après l’en-tête"
 
-#: framework/extensions/trending/customizer.php:363
+#: framework/extensions/trending/customizer.php:550
 msgid "After Footer"
 msgstr "Après le pied de page"
 
-#: framework/extensions/trending/customizer.php:358
+#: framework/extensions/trending/customizer.php:545
 msgid "Before Footer"
 msgstr "Avant le pied de page"
 
-#: framework/extensions/trending/customizer.php:350
+#: framework/extensions/trending/customizer.php:537
 msgid "Display Location"
 msgstr "Afficher l’emplacement"
 
@@ -1636,6 +1731,7 @@ msgstr "Formulaire d’inscription"
 msgid "Check your email"
 msgstr "Vérifiez vos e-mails"
 
+#: framework/features/blocks/contact-info/options.php:13
 #: framework/features/header/items/account/options.php:2059
 msgid "Element Visibility"
 msgstr "Visibilité de l’élément"
@@ -1809,15 +1905,15 @@ msgstr "Options de connexion"
 msgid "Customizing: Logged in State"
 msgstr "Personnalisation : état de connexion"
 
-#: framework/extensions/product-reviews/metabox.php:225
+#: framework/extensions/product-reviews/metabox.php:227
 msgid "Product specs"
 msgstr "Specs des produits"
 
-#: framework/extensions/product-reviews/metabox.php:185
+#: framework/extensions/product-reviews/metabox.php:187
 msgid "Scores"
 msgstr "Notes"
 
-#: framework/extensions/product-reviews/metabox.php:148
+#: framework/extensions/product-reviews/metabox.php:150
 msgid "Read More Button Label"
 msgstr "Libellé du bouton « lire la suite »"
 
@@ -1834,7 +1930,7 @@ msgid "Gallery"
 msgstr "Galerie"
 
 #. Translators: %s is the theme name.
-#: framework/dashboard.php:417 framework/dashboard.php:418
+#: framework/dashboard.php:421 framework/dashboard.php:422
 #: framework/extensions/product-reviews/extension.php:619
 msgid "Blocksy"
 msgstr "Blocksy"
@@ -1893,12 +1989,12 @@ msgstr "Non trouvé dans la corbeille"
 msgid "Not Found"
 msgstr "Non trouvé"
 
-#: framework/extensions/product-reviews/metabox.php:270
+#: framework/extensions/product-reviews/metabox.php:272
 #: framework/extensions/product-reviews/views/single-top.php:285
 msgid "Cons"
 msgstr "Contre"
 
-#: framework/extensions/product-reviews/metabox.php:250
+#: framework/extensions/product-reviews/metabox.php:252
 #: framework/extensions/product-reviews/views/single-top.php:262
 msgid "Pros"
 msgstr "Pour"
@@ -1907,7 +2003,7 @@ msgstr "Pour"
 msgid "Specs"
 msgstr "Specs"
 
-#: framework/extensions/product-reviews/metabox.php:150
+#: framework/extensions/product-reviews/metabox.php:152
 #: framework/extensions/product-reviews/views/single-top.php:162
 msgid "Read More"
 msgstr "Lire la Suite"
@@ -1923,7 +2019,7 @@ msgid "Overall Score"
 msgstr "Note globale"
 
 #: framework/extensions/product-reviews/helpers.php:30
-#: framework/extensions/product-reviews/metabox.php:179
+#: framework/extensions/product-reviews/metabox.php:181
 #: static/bundle/blocks/blocks.js:7
 #: static/js/editor/blocks/dynamic-data/hooks/use-dynamic-data-descriptor.js:131
 msgid "Rating"
@@ -1992,81 +2088,81 @@ msgid "Include"
 msgstr "Inclure"
 
 #. translators: %s: WordPress version
-#: blocksy-companion.php:122
+#: blocksy-companion.php:124
 msgid "Blocksy requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING."
 msgstr "Blocksy nécessite WordPress version %s+. Comme vous utilisez une version antérieure, l’extension ne fonctionne pas actuellement."
 
 #. translators: %s: PHP version
-#: blocksy-companion.php:110
+#: blocksy-companion.php:112
 msgid "Blocksy requires PHP version %s+, plugin is currently NOT RUNNING."
 msgstr "Blocksy nécessite PHP version %s+, l’extension ne fonctionne pas actuellement."
 
-#: framework/features/blocks/contact-info/options.php:429
+#: framework/features/blocks/contact-info/options.php:461
 msgid "Website:"
 msgstr "Site :"
 
-#: framework/features/blocks/contact-info/options.php:422
+#: framework/features/blocks/contact-info/options.php:454
 msgid "Website"
 msgstr "Site"
 
-#: framework/features/blocks/contact-info/options.php:368
+#: framework/features/blocks/contact-info/options.php:398
 msgid "Email:"
 msgstr "E-mail :"
 
-#: framework/features/blocks/contact-info/options.php:307
+#: framework/features/blocks/contact-info/options.php:335
 msgid "Fax:"
 msgstr "Fax :"
 
-#: framework/features/blocks/contact-info/options.php:300
+#: framework/features/blocks/contact-info/options.php:328
 msgid "Fax"
 msgstr "Fax"
 
-#: framework/features/blocks/contact-info/options.php:246
+#: framework/features/blocks/contact-info/options.php:272
 msgid "Opening hours"
 msgstr "Horaires d’ouverture"
 
-#: framework/features/blocks/contact-info/options.php:239
+#: framework/features/blocks/contact-info/options.php:265
 msgid "Work Hours"
 msgstr "Heures de travail"
 
-#: framework/features/blocks/contact-info/options.php:117
+#: framework/features/blocks/contact-info/options.php:139
 msgid "Phone"
 msgstr "Téléphone"
 
-#: framework/features/blocks/contact-info/options.php:74
-#: framework/features/blocks/contact-info/options.php:137
-#: framework/features/blocks/contact-info/options.php:198
-#: framework/features/blocks/contact-info/options.php:259
-#: framework/features/blocks/contact-info/options.php:320
-#: framework/features/blocks/contact-info/options.php:381
-#: framework/features/blocks/contact-info/options.php:442
+#: framework/features/blocks/contact-info/options.php:94
+#: framework/features/blocks/contact-info/options.php:159
+#: framework/features/blocks/contact-info/options.php:222
+#: framework/features/blocks/contact-info/options.php:285
+#: framework/features/blocks/contact-info/options.php:348
+#: framework/features/blocks/contact-info/options.php:411
+#: framework/features/blocks/contact-info/options.php:474
 msgid "Link (optional)"
 msgstr "Lien (facultatif)"
 
-#: framework/features/blocks/contact-info/options.php:55
+#: framework/features/blocks/contact-info/options.php:75
 msgid "Address"
 msgstr "Adresse"
 
-#: framework/features/blocks/contact-info/options.php:47
-#: framework/features/blocks/contact-info/options.php:185
+#: framework/features/blocks/contact-info/options.php:67
+#: framework/features/blocks/contact-info/options.php:209
 #: framework/features/blocks/contact-info/view.php:31
 msgid "Mobile:"
 msgstr "Mobile :"
 
-#: framework/features/blocks/contact-info/options.php:39
-#: framework/features/blocks/contact-info/options.php:124
+#: framework/features/blocks/contact-info/options.php:59
+#: framework/features/blocks/contact-info/options.php:146
 #: framework/features/blocks/contact-info/view.php:23
 msgid "Phone:"
 msgstr "Téléphone :"
 
-#: framework/features/blocks/contact-info/options.php:31
-#: framework/features/blocks/contact-info/options.php:61
+#: framework/features/blocks/contact-info/options.php:51
+#: framework/features/blocks/contact-info/options.php:81
 #: framework/features/blocks/contact-info/view.php:15
 msgid "Address:"
 msgstr "Adresse :"
 
 #: framework/extensions/newsletter-subscribe/ct-newsletter-subscribe/options.php:13
-#: framework/features/blocks/contact-info/options.php:19
+#: framework/features/blocks/contact-info/options.php:39
 #: framework/features/header/items/account/options.php:577
 #: static/bundle/blocks/blocks.js:7
 #: static/js/editor/blocks/breadcrumbs/Edit.js:54
@@ -2074,49 +2170,50 @@ msgstr "Adresse :"
 msgid "Text"
 msgstr "Texte"
 
-#: framework/features/blocks/contact-info/options.php:15
+#: framework/features/blocks/contact-info/options.php:35
 #: static/bundle/blocks/blocks.js:7
 #: static/js/editor/blocks/contact-info/index.js:51
-#: static/js/editor/blocks/contact-info/index.js:53
+#: static/js/editor/blocks/contact-info/index.js:54
 msgid "Contact Info"
 msgstr "Informations de contact"
 
-#: framework/extensions/trending/customizer.php:266
+#: framework/extensions/trending/customizer.php:358
 msgid "Separate posts ID by comma. How to find the %spost ID%s."
 msgstr "Séparer les ID de publications par une virgule. Comment trouver l’%sID de publication%s."
 
-#: framework/extensions/trending/customizer.php:262
+#: framework/extensions/trending/customizer.php:354
 msgid "Posts ID"
 msgstr "ID des publications"
 
-#: framework/extensions/trending/customizer.php:239
+#: framework/extensions/trending/customizer.php:330
 msgid "Custom Query"
 msgstr "Requête personnalisée"
 
-#: framework/extensions/trending/customizer.php:238
+#: framework/extensions/trending/customizer.php:329
 #: static/bundle/blocks/blocks.js:7
-#: static/js/editor/blocks/query/edit/layers/useTaxonomiesLayers.js:186
+#: static/js/editor/blocks/query/edit/layers/useTaxonomiesLayers.js:189
 #: static/js/editor/blocks/query/edit/layers/useTaxonomiesLayers.js:229
 msgid "Taxonomies"
 msgstr "Taxonomies"
 
-#: framework/extensions/trending/customizer.php:42
+#: framework/extensions/trending/customizer.php:43
 msgid "All taxonomies"
 msgstr "Toutes les taxonomies"
 
-#: framework/extensions/trending/customizer.php:41
+#: framework/extensions/trending/customizer.php:42
 #: static/bundle/blocks/blocks.js:7
 #: static/js/editor/blocks/dynamic-data/components/InspectorControls.js:66
 #: static/js/editor/blocks/tax-query/Edit.js:156
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: framework/extensions/trending/customizer.php:36
+#: framework/extensions/trending/customizer.php:37
 msgid "All categories"
 msgstr "Toutes les catégories"
 
 #: framework/extensions/product-reviews/extension.php:591
-#: framework/extensions/trending/customizer.php:35
+#: framework/extensions/trending/customizer.php:36
+#: framework/extensions/trending/customizer.php:117
 msgid "Category"
 msgstr "Catégorie"
 
@@ -2135,7 +2232,7 @@ msgstr "Alignement"
 
 #: framework/extensions/newsletter-subscribe/customizer.php:26
 #: framework/features/blocks/about-me/options.php:64
-#: framework/features/blocks/dynamic-data/options.php:143
+#: framework/features/blocks/dynamic-data/options.php:142
 msgid "Description"
 msgstr "Description"
 
@@ -2157,21 +2254,21 @@ msgid "About me"
 msgstr "À propos de moi"
 
 #: framework/features/blocks/about-me/options.php:219
-#: framework/features/blocks/contact-info/options.php:547
+#: framework/features/blocks/contact-info/options.php:581
 #: framework/features/blocks/share-box/options.php:165
 #: framework/features/blocks/socials/options.php:129
 msgid "Outline"
 msgstr "Contour"
 
 #: framework/features/blocks/about-me/options.php:220
-#: framework/features/blocks/contact-info/options.php:548
+#: framework/features/blocks/contact-info/options.php:582
 #: framework/features/blocks/share-box/options.php:166
 #: framework/features/blocks/socials/options.php:130
 msgid "Solid"
 msgstr "Plein"
 
 #: framework/features/blocks/about-me/options.php:215
-#: framework/features/blocks/contact-info/options.php:541
+#: framework/features/blocks/contact-info/options.php:575
 #: framework/features/blocks/share-box/options.php:159
 #: framework/features/blocks/socials/options.php:123
 msgid "Shape Fill Type"
@@ -2179,7 +2276,7 @@ msgstr "Type de remplissage de la forme"
 
 #: framework/features/blocks/about-me/options.php:98
 #: framework/features/blocks/about-me/options.php:206
-#: framework/features/blocks/contact-info/options.php:532
+#: framework/features/blocks/contact-info/options.php:566
 #: framework/features/blocks/share-box/options.php:150
 #: framework/features/blocks/socials/options.php:114
 #: static/bundle/blocks/blocks.js:7
@@ -2189,14 +2286,14 @@ msgstr "Carré"
 
 #: framework/features/blocks/about-me/options.php:97
 #: framework/features/blocks/about-me/options.php:205
-#: framework/features/blocks/contact-info/options.php:531
+#: framework/features/blocks/contact-info/options.php:565
 #: framework/features/blocks/share-box/options.php:149
 #: framework/features/blocks/socials/options.php:113
 msgid "Rounded"
 msgstr "Arrondi"
 
 #: framework/features/blocks/about-me/options.php:204
-#: framework/features/blocks/contact-info/options.php:530
+#: framework/features/blocks/contact-info/options.php:564
 #: framework/features/blocks/share-box/options.php:148
 #: framework/features/blocks/socials/options.php:112
 #: framework/features/header/items/account/options.php:22
@@ -2209,7 +2306,7 @@ msgid "None"
 msgstr "Aucun"
 
 #: framework/features/blocks/about-me/options.php:200
-#: framework/features/blocks/contact-info/options.php:523
+#: framework/features/blocks/contact-info/options.php:557
 #: framework/features/blocks/share-box/options.php:142
 #: framework/features/blocks/socials/options.php:106
 msgid "Icons Shape Type"
@@ -2229,7 +2326,7 @@ msgid "Small"
 msgstr "Petite"
 
 #: framework/features/blocks/about-me/options.php:168
-#: framework/features/blocks/contact-info/options.php:504
+#: framework/features/blocks/contact-info/options.php:538
 #: framework/features/blocks/share-box/options.php:110
 #: framework/features/blocks/socials/options.php:74
 msgid "Icons Size"
@@ -2243,7 +2340,7 @@ msgstr "Vous pouvez configurer des URL sociales dans  %s."
 msgid "Social Icons"
 msgstr "Icônes sociales"
 
-#: framework/features/blocks/contact-info/options.php:486
+#: framework/features/blocks/contact-info/options.php:520
 msgid "Open link in new tab"
 msgstr "Ouvrir le lien dans un nouvel onglet"
 
@@ -2253,7 +2350,7 @@ msgstr "Ouvrir le lien dans un nouvel onglet"
 msgid "Image"
 msgstr "Image"
 
-#: framework/extensions/trending/customizer.php:233
+#: framework/extensions/trending/customizer.php:324
 msgid "Source"
 msgstr "Source"
 
@@ -2265,11 +2362,11 @@ msgstr "Modifier l’image"
 msgid "Select Image"
 msgstr "Sélectionner une image"
 
-#: framework/helpers/exts.php:186
+#: framework/helpers/exts-configs.php:238
 msgid "Floating Cart"
 msgstr "Panier flottant"
 
-#: framework/helpers/exts.php:194
+#: framework/helpers/exts-configs.php:246
 msgid "Quick View"
 msgstr "Vue rapide"
 
@@ -2308,13 +2405,13 @@ msgid "We use cookies to ensure that we give you the best experience on our webs
 msgstr "Nous utilisons des cookies pour nous assurer que nous vous offrons la meilleure expérience possible sur notre site."
 
 #: framework/extensions/cookies-consent/customizer.php:62
-#: framework/features/blocks/contact-info/options.php:67
-#: framework/features/blocks/contact-info/options.php:130
-#: framework/features/blocks/contact-info/options.php:191
-#: framework/features/blocks/contact-info/options.php:252
-#: framework/features/blocks/contact-info/options.php:313
-#: framework/features/blocks/contact-info/options.php:374
-#: framework/features/blocks/contact-info/options.php:435
+#: framework/features/blocks/contact-info/options.php:87
+#: framework/features/blocks/contact-info/options.php:152
+#: framework/features/blocks/contact-info/options.php:215
+#: framework/features/blocks/contact-info/options.php:278
+#: framework/features/blocks/contact-info/options.php:341
+#: framework/features/blocks/contact-info/options.php:404
+#: framework/features/blocks/contact-info/options.php:467
 msgid "Content"
 msgstr "Contenu"
 
@@ -2398,7 +2495,7 @@ msgstr "Formulaire d’inscription"
 #: framework/features/blocks/about-me/options.php:58
 #: framework/features/header/items/account/options.php:578
 #: static/bundle/blocks/blocks.js:7
-#: static/js/editor/blocks/tax-query/edit/TermsInspectorControls.js:129
+#: static/js/editor/blocks/tax-query/edit/TermsInspectorControls.js:128
 msgid "Name"
 msgstr "Nom"
 
@@ -2450,22 +2547,22 @@ msgstr "Champ du nom"
 #: framework/extensions/newsletter-subscribe/ct-newsletter-subscribe/options.php:50
 #: framework/extensions/newsletter-subscribe/customizer.php:61
 #: framework/extensions/newsletter-subscribe/dashboard-static/bundle/main.js:15
-#: framework/extensions/newsletter-subscribe/dashboard-static/js/EditCredentials.js:204
+#: framework/extensions/newsletter-subscribe/dashboard-static/js/EditCredentials.js:180
 msgid "List ID"
 msgstr "ID de la liste"
 
 #: framework/extensions/newsletter-subscribe/ct-newsletter-subscribe/options.php:41
 #: framework/extensions/newsletter-subscribe/customizer.php:49
-#: framework/extensions/trending/customizer.php:173
+#: framework/extensions/trending/customizer.php:236
 #: framework/features/blocks/about-me/options.php:27
 #: framework/features/blocks/about-me/options.php:194
-#: framework/features/blocks/contact-info/options.php:91
-#: framework/features/blocks/contact-info/options.php:154
-#: framework/features/blocks/contact-info/options.php:215
-#: framework/features/blocks/contact-info/options.php:276
-#: framework/features/blocks/contact-info/options.php:337
-#: framework/features/blocks/contact-info/options.php:398
-#: framework/features/blocks/contact-info/options.php:459
+#: framework/features/blocks/contact-info/options.php:111
+#: framework/features/blocks/contact-info/options.php:176
+#: framework/features/blocks/contact-info/options.php:239
+#: framework/features/blocks/contact-info/options.php:302
+#: framework/features/blocks/contact-info/options.php:365
+#: framework/features/blocks/contact-info/options.php:428
+#: framework/features/blocks/contact-info/options.php:491
 #: framework/features/blocks/dynamic-data/options.php:64
 #: framework/features/blocks/share-box/options.php:136
 #: framework/features/blocks/socials/options.php:100
@@ -2495,14 +2592,14 @@ msgstr "Newsletter"
 
 #: framework/extensions/newsletter-subscribe/customizer.php:18
 #: framework/features/blocks/about-me/options.php:15
-#: framework/features/blocks/contact-info/options.php:14
-#: framework/features/blocks/contact-info/options.php:60
-#: framework/features/blocks/contact-info/options.php:123
-#: framework/features/blocks/contact-info/options.php:184
-#: framework/features/blocks/contact-info/options.php:245
-#: framework/features/blocks/contact-info/options.php:306
-#: framework/features/blocks/contact-info/options.php:367
-#: framework/features/blocks/contact-info/options.php:428
+#: framework/features/blocks/contact-info/options.php:34
+#: framework/features/blocks/contact-info/options.php:80
+#: framework/features/blocks/contact-info/options.php:145
+#: framework/features/blocks/contact-info/options.php:208
+#: framework/features/blocks/contact-info/options.php:271
+#: framework/features/blocks/contact-info/options.php:334
+#: framework/features/blocks/contact-info/options.php:397
+#: framework/features/blocks/contact-info/options.php:460
 #: framework/features/blocks/share-box/options.php:14
 #: framework/features/blocks/socials/options.php:14
 #: static/bundle/blocks/blocks.js:7
@@ -2516,16 +2613,17 @@ msgid "Disable Subscribe Form"
 msgstr "Désactiver le formulaire d’inscription"
 
 #: framework/extensions/newsletter-subscribe/customizer.php:149
+#: framework/extensions/trending/customizer.php:516
 msgid "Visibility"
 msgstr "Visibilité"
 
-#: framework/extensions/trending/customizer.php:119
-#: framework/extensions/trending/helpers.php:230
+#: framework/extensions/trending/customizer.php:182
+#: framework/extensions/trending/helpers.php:352
 msgid "Trending now"
 msgstr "Tendance actuelle"
 
 #: framework/extensions/newsletter-subscribe/customizer.php:357
-#: framework/extensions/trending/customizer.php:532
+#: framework/extensions/trending/customizer.php:903
 msgid "Container Background"
 msgstr "Arrière-plan du conteneur"
 
@@ -2537,7 +2635,8 @@ msgid "Font Color"
 msgstr "Couleur de la police"
 
 #: framework/extensions/newsletter-subscribe/customizer.php:161
-#: framework/extensions/trending/customizer.php:342
+#: framework/extensions/trending/customizer.php:529
+#: framework/features/blocks/contact-info/options.php:25
 #: framework/features/blocks/search/options.php:169
 #: framework/features/header/items/account/options.php:533
 #: framework/features/header/items/account/options.php:996
@@ -2545,42 +2644,38 @@ msgstr "Couleur de la police"
 msgid "Tablet"
 msgstr "Tablette"
 
-#: framework/extensions/trending/customizer.php:329
-msgid "Container Visibility"
-msgstr "Visibilité du conteneur"
-
 #: framework/extensions/newsletter-subscribe/customizer.php:408
-#: framework/extensions/trending/customizer.php:548
+#: framework/extensions/trending/customizer.php:919
 msgid "Container Inner Spacing"
 msgstr "Espacement intérieur du conteneur"
 
-#: framework/extensions/trending/customizer.php:294
+#: framework/extensions/trending/customizer.php:386
 msgid "Last Month"
 msgstr "Le mois dernier"
 
-#: framework/extensions/trending/customizer.php:293
+#: framework/extensions/trending/customizer.php:385
 msgid "Last 7 Days"
 msgstr "Les 7 derniers jours"
 
-#: framework/extensions/trending/customizer.php:292
+#: framework/extensions/trending/customizer.php:384
 msgid "Last 24 Hours"
 msgstr "Les dernières 24 heures"
 
-#: framework/extensions/trending/customizer.php:291
+#: framework/extensions/trending/customizer.php:383
 msgid "All Time"
 msgstr "Tout le temps"
 
-#: framework/extensions/trending/customizer.php:282
+#: framework/extensions/trending/customizer.php:375
 msgid "Trending From"
 msgstr "Tendance depuis"
 
-#: framework/extensions/trending/customizer.php:210
-#: framework/extensions/trending/customizer.php:224
+#: framework/extensions/trending/customizer.php:273
+#: framework/extensions/trending/customizer.php:287
 #: static/bundle/blocks/blocks.js:7 static/js/editor/blocks/query/Edit.js:169
 msgid "Post Type"
 msgstr "Type de publication"
 
-#: framework/extensions/trending/customizer.php:106
+#: framework/extensions/trending/customizer.php:169
 msgid "Trending Posts"
 msgstr "Articles tendance"
 
@@ -2589,7 +2684,7 @@ msgstr "Articles tendance"
 msgid "Products"
 msgstr "Produits"
 
-#: framework/extensions/trending/customizer.php:374
+#: framework/extensions/trending/customizer.php:561
 #: framework/features/header/header-options.php:163 static/bundle/options.js:15
 #: static/js/header/EditConditions.js:103
 msgid "Display Conditions"
@@ -2600,8 +2695,9 @@ msgid "Transparent Functionality"
 msgstr "Fonction de transparence"
 
 #: framework/extensions/newsletter-subscribe/customizer.php:162
-#: framework/extensions/trending/customizer.php:343
-#: framework/features/blocks/contact-info/options.php:178
+#: framework/extensions/trending/customizer.php:530
+#: framework/features/blocks/contact-info/options.php:26
+#: framework/features/blocks/contact-info/options.php:202
 #: framework/features/blocks/search/options.php:170
 #: framework/features/header/header-options.php:110
 #: framework/features/header/header-options.php:192
@@ -2612,7 +2708,8 @@ msgid "Mobile"
 msgstr "Mobile"
 
 #: framework/extensions/newsletter-subscribe/customizer.php:160
-#: framework/extensions/trending/customizer.php:341
+#: framework/extensions/trending/customizer.php:528
+#: framework/features/blocks/contact-info/options.php:24
 #: framework/features/blocks/search/options.php:168
 #: framework/features/header/header-options.php:108
 #: framework/features/header/header-options.php:190
@@ -2638,14 +2735,16 @@ msgstr "Glissement vers le bas"
 #: framework/extensions/newsletter-subscribe/ct-newsletter-subscribe/options.php:81
 #: framework/extensions/newsletter-subscribe/customizer.php:48
 #: framework/extensions/product-reviews/metabox.php:17
-#: framework/extensions/trending/customizer.php:169
-#: framework/features/blocks/contact-info/options.php:90
-#: framework/features/blocks/contact-info/options.php:153
-#: framework/features/blocks/contact-info/options.php:214
-#: framework/features/blocks/contact-info/options.php:275
-#: framework/features/blocks/contact-info/options.php:336
-#: framework/features/blocks/contact-info/options.php:397
-#: framework/features/blocks/contact-info/options.php:458
+#: framework/extensions/trending/customizer.php:232
+#: framework/extensions/trending/customizer.php:306
+#: framework/extensions/trending/customizer.php:448
+#: framework/features/blocks/contact-info/options.php:110
+#: framework/features/blocks/contact-info/options.php:175
+#: framework/features/blocks/contact-info/options.php:238
+#: framework/features/blocks/contact-info/options.php:301
+#: framework/features/blocks/contact-info/options.php:364
+#: framework/features/blocks/contact-info/options.php:427
+#: framework/features/blocks/contact-info/options.php:490
 #: framework/features/header/header-options.php:76
 #: framework/features/header/items/account/options.php:385
 #: framework/features/header/items/account/options.php:766
@@ -2702,8 +2801,8 @@ msgid "Registration confirmation will be emailed to you."
 msgstr "La confirmation d’inscription vous sera envoyée par e-mail"
 
 #: framework/extensions/newsletter-subscribe/ct-newsletter-subscribe/view.php:262
-#: framework/features/blocks/contact-info/options.php:361
-#: framework/features/blocks/dynamic-data/options.php:138
+#: framework/features/blocks/contact-info/options.php:391
+#: framework/features/blocks/dynamic-data/options.php:143
 #: framework/features/blocks/share-box/options.php:97
 #: framework/features/header/modal/register.php:47
 msgid "Email"
@@ -2757,8 +2856,11 @@ msgstr "Marge de l’élément"
 #: framework/extensions/cookies-consent/customizer.php:321
 #: framework/extensions/newsletter-subscribe/customizer.php:219
 #: framework/extensions/newsletter-subscribe/customizer.php:350
-#: framework/extensions/trending/customizer.php:492
-#: framework/extensions/trending/customizer.php:524
+#: framework/extensions/trending/customizer.php:678
+#: framework/extensions/trending/customizer.php:731
+#: framework/extensions/trending/customizer.php:772
+#: framework/extensions/trending/customizer.php:804
+#: framework/extensions/trending/customizer.php:895
 #: framework/features/header/items/account/options.php:1207
 #: framework/features/header/items/account/options.php:1250
 #: framework/features/header/items/account/options.php:1292
@@ -2805,9 +2907,13 @@ msgstr "Survol"
 #: framework/extensions/newsletter-subscribe/customizer.php:276
 #: framework/extensions/newsletter-subscribe/customizer.php:313
 #: framework/extensions/newsletter-subscribe/customizer.php:345
-#: framework/extensions/trending/customizer.php:423
-#: framework/extensions/trending/customizer.php:486
-#: framework/extensions/trending/customizer.php:518
+#: framework/extensions/trending/customizer.php:610
+#: framework/extensions/trending/customizer.php:673
+#: framework/extensions/trending/customizer.php:726
+#: framework/extensions/trending/customizer.php:766
+#: framework/extensions/trending/customizer.php:798
+#: framework/extensions/trending/customizer.php:848
+#: framework/extensions/trending/customizer.php:889
 #: framework/features/header/items/account/options.php:1198
 #: framework/features/header/items/account/options.php:1242
 #: framework/features/header/items/account/options.php:1284
@@ -2873,7 +2979,7 @@ msgstr "État par défaut"
 #: framework/extensions/cookies-consent/customizer.php:142
 #: framework/extensions/newsletter-subscribe/customizer.php:170
 #: framework/extensions/product-reviews/extension.php:422
-#: framework/extensions/trending/customizer.php:395
+#: framework/extensions/trending/customizer.php:582
 #: framework/features/header/header-options.php:203
 #: framework/features/header/items/account/options.php:1107
 msgid "Design"
@@ -2923,14 +3029,14 @@ msgstr "Connexion"
 msgid "Icon Size"
 msgstr "Taille de l’icône"
 
-#: framework/extensions/trending/customizer.php:188
-#: framework/features/blocks/contact-info/options.php:101
-#: framework/features/blocks/contact-info/options.php:164
-#: framework/features/blocks/contact-info/options.php:225
-#: framework/features/blocks/contact-info/options.php:286
-#: framework/features/blocks/contact-info/options.php:347
-#: framework/features/blocks/contact-info/options.php:408
-#: framework/features/blocks/contact-info/options.php:469
+#: framework/extensions/trending/customizer.php:251
+#: framework/features/blocks/contact-info/options.php:121
+#: framework/features/blocks/contact-info/options.php:186
+#: framework/features/blocks/contact-info/options.php:249
+#: framework/features/blocks/contact-info/options.php:312
+#: framework/features/blocks/contact-info/options.php:375
+#: framework/features/blocks/contact-info/options.php:438
+#: framework/features/blocks/contact-info/options.php:501
 #: framework/features/blocks/search/options.php:86
 #: framework/features/header/items/account/options.php:347
 #: framework/features/header/items/account/options.php:404
@@ -2943,12 +3049,12 @@ msgstr "Icône"
 #: framework/extensions/newsletter-subscribe/customizer.php:12
 #: framework/extensions/product-reviews/extension.php:382
 #: framework/extensions/product-reviews/metabox.php:6
-#: framework/extensions/trending/customizer.php:110
+#: framework/extensions/trending/customizer.php:173
 #: framework/features/header/header-options.php:6
 #: framework/features/header/items/account/options.php:330
 #: static/bundle/blocks/blocks.js:7
 #: static/js/editor/blocks/query/edit/PostsInspectorControls.js:43
-#: static/js/editor/blocks/tax-query/edit/TermsInspectorControls.js:39
+#: static/js/editor/blocks/tax-query/edit/TermsInspectorControls.js:38
 msgid "General"
 msgstr "Général"
 
@@ -3283,7 +3389,7 @@ msgstr "Archive %s"
 msgid "%s Single"
 msgstr "%s unique"
 
-#: framework/features/google-analytics.php:104
+#: framework/features/google-analytics.php:69
 msgid "Google Analytics v4"
 msgstr "Google Analytics v4"
 

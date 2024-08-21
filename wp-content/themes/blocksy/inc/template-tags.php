@@ -132,7 +132,7 @@ if (! function_exists('blocksy_entry_excerpt')) {
 		}
 
 		if ($args['source'] === 'full') {
-			$args['class'] .= ' entry-content';
+			$args['class'] .= ' entry-content is-layout-flow';
 
 			ob_start();
 			the_content(
@@ -250,7 +250,7 @@ function blocksy_post_navigation() {
 		]
 	));
 
-	$container_class = 'post-navigation';
+	$container_class = 'post-navigation ct-constrained-width';
 
 	$container_class .= ' ' . blocksy_visibility_classes(blocksy_get_theme_mod(
 		$prefix . '_post_nav_visibility',
@@ -533,7 +533,7 @@ function blocksy_related_posts($location = null) {
 
 	if ($location !== 'separated') {
 		$boxed_container_class = trim(
-			$boxed_container_class . ' ' . $related_visibility
+			$boxed_container_class . ' ct-constrained-width ' . $related_visibility
 		);
 	}
 

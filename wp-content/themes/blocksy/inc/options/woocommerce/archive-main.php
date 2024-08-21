@@ -84,7 +84,8 @@ $options = [
 								'value' => [
 									'desktop' => 4,
 									'tablet' => 3,
-									'mobile' => 1
+									'mobile' => 1,
+									'__changed' => ['tablet', 'mobile']
 								],
 								'min' => 1,
 								'max' => 6,
@@ -208,27 +209,9 @@ $options = [
 				[]
 			),
 
-			[
-				'has_shop_results_count' => [
-					'label' => __( 'Results Count', 'blocksy' ),
-					'type' => 'ct-switch',
-					'value' => 'yes',
-					'sync' => blocksy_sync_whole_page([
-						'prefix' => 'woo_categories',
-						'loader_selector' => '.woo-listing-top'
-					]),
-				],
+			blocksy_get_options('woocommerce/results-count'),
 
-				'has_shop_sort' => [
-					'label' => __( 'Products Sorting', 'blocksy' ),
-					'type' => 'ct-switch',
-					'value' => 'yes',
-					'sync' => blocksy_sync_whole_page([
-						'prefix' => 'woo_categories',
-						'loader_selector' => '.woo-listing-top'
-					]),
-				],
-			],
+			blocksy_get_options('woocommerce/products-sorting'),
 
 			blocksy_get_options('general/sidebar-particular', [
 				'prefix' => 'woo_categories',

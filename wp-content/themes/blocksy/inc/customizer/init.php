@@ -315,6 +315,7 @@ add_action(
 				),
 				'dashboard_actions_nonce' => wp_create_nonce('ct-dashboard'),
 				'conditions_override' => blocksy_manager()->get_conditions_overrides(),
+				'modal_links' => blocksy_get_pricing_links()
 			]
 		);
 	}
@@ -366,6 +367,10 @@ add_action(
 					$single_setting->id === 'woocommerce_archive_thumbnail_cropping'
 					||
 					$single_setting->id === 'woocommerce_archive_thumbnail_image_width'
+					||
+					$single_setting->id === 'woocommerce_catalog_columns'
+					||
+					$single_setting->id === 'woocommerce_catalog_rows'
 				) {
 					delete_option($single_setting->id);
 				}

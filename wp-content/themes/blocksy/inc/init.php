@@ -585,6 +585,11 @@ require get_template_directory() . '/inc/integrations/cartflows.php';
 require get_template_directory() . '/inc/integrations/bbpress.php';
 require get_template_directory() . '/inc/integrations/fluent-forms.php';
 require get_template_directory() . '/inc/integrations/coauthors.php';
+require get_template_directory() . '/inc/integrations/disqus.php';
+
+if (function_exists('get_rocket_cdn_url')) {
+	require get_template_directory() . '/inc/integrations/wprocket.php';
+}
 
 require get_template_directory() . '/inc/components/archive/helpers.php';
 require get_template_directory() . '/inc/components/archive/archive-card.php';
