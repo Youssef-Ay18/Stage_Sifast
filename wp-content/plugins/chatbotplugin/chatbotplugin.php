@@ -30,11 +30,48 @@ function chatbot_plugin_shortcode() {
 
 add_shortcode('chatbot_plugin', 'chatbot_plugin_shortcode');
 
+
+// Register and display plugin settings
+function chatbot_plugin_register_settings() {
+    register_setting('chatbot_plugin_settings_group', 'chatbot_plugin_api_url');
+    register_setting('chatbot_plugin_settings_group', 'chatbot_plugin_api_key');
+    register_setting('chatbot_plugin_settings_group', 'chatbot_plugin_api_secret');
+
+    add_settings_section(
+        'chatbot_plugin_api_settings_section',
+        'API Settings',
+        null,
+        'chatbot-plugin'
+    );
+}
+add_action('admin_init', 'chatbot_plugin_register_settings');
+
+function chatbot_plugin_settings_page() {
+    include plugin_dir_path(__FILE__) . 'views/chatbot-plugin-settings.php';
+}
+
+
+// Adding the admin menu with an icon
+function chatbot_plugin_add_admin_menu() {
+    add_menu_page(
+        'Chatbot Plugin Settings', // Page title
+        'Chatbot Plugin', // Menu title
+        'manage_options', // Capability
+        'chatbot-plugin', // Menu slug
+        'chatbot_plugin_settings_page', // Function to display the page
+        'dashicons-format-chat', // Dashicon class for the icon
+        60 // Position in the menu
+    );
+}
+add_action('admin_menu', 'chatbot_plugin_add_admin_menu');
+
+
+// API Call Functions
 function call_api($url) {
     $args = array(
         'headers' => array(
-            'X-Auth-Key' => 'wordpress',
-            'X-Auth-Secret' => 'f4ae4d1a35cf653bed2e78623cc1cfd0'
+            'X-Auth-Key' => get_option('chatbot_plugin_api_key'),
+            'X-Auth-Secret' => get_option('chatbot_plugin_api_secret')
         )
     );
 
@@ -51,7 +88,7 @@ function call_api($url) {
 
 
 function fetch_residences_by_query($query, $option) {
-    $url = 'https://admin.arpej.fr/api/wordpress/residences/';
+    $url = get_option('chatbot_plugin_api_url');
     $data = call_api($url);
 
     if (!$data) {
@@ -86,7 +123,7 @@ function fetch_residences_by_query($query, $option) {
 
 
 function fetch_residences_by_budget($budget) {
-    $url = 'https://admin.arpej.fr/api/wordpress/residences/';
+    $url = get_option('chatbot_plugin_api_url');
     $data = call_api($url);
 
     if (!$data) {
@@ -111,13 +148,15 @@ function fetch_residences_by_budget($budget) {
 }
 
 function chatbot_plugin_fetch_details() {
+
     if (!isset($_POST['residence_id'])) {
         wp_send_json_error(array('message' => 'Invalid request.'));
     }
 
     $residence_id = sanitize_text_field($_POST['residence_id']);
-    $url = 'https://admin.arpej.fr/api/wordpress/residences/' . $residence_id;
+    $url = get_option('chatbot_plugin_api_url') . '/' . $residence_id;
     $residence = call_api($url);
+    
 
     if (!$residence) {
         wp_send_json_error(array('message' => 'Details not found.'));
@@ -190,8 +229,9 @@ function chatbot_plugin_handle_details() {
     }
 
     $residence_id = sanitize_text_field($_POST['residence_id']);
-    $url = 'https://admin.arpej.fr/api/wordpress/residences/' . $residence_id;
+    $url = get_option('chatbot_plugin_api_url') . '/' . $residence_id;
     $residence = call_api($url);
+    
 
     if (!$residence) {
         wp_send_json_error(array('message' => 'Details not found.'));
@@ -205,6 +245,10 @@ function chatbot_plugin_handle_details() {
         'offers' => $residence['offers'],
         'preview' => $residence['preview']
     );
+
+    ob_start();
+    include plugin_dir_path(__FILE__) . 'views/residence_details.php';
+    $html = ob_get_clean();
 
     wp_send_json_success($details);
 }
